@@ -77,12 +77,12 @@ export default function SAIPage() {
     }
   ];
 
-  const followUpSuggestions = [
-    "What is the hostel fee structure?",
-    "Tell me about MBBS & Dental admission process",
-    "Calculate my scholarship for 92% in 12th",
-    "What is SUAT 2026 syllabus?"
-  ];
+  const [dynamicFollowUps, setDynamicFollowUps] = useState<string[]>([
+    "When do 2026 admissions close?",
+    "Calculate my scholarship for 12th score",
+    "What is the SUAT 2026 entrance syllabus?",
+    "Compare B.Tech CSE with AI & ML"
+  ]);
 
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -115,6 +115,9 @@ export default function SAIPage() {
 
       if (response.ok) {
         const data = await response.json();
+        if (data.suggested_followups && Array.isArray(data.suggested_followups) && data.suggested_followups.length > 0) {
+          setDynamicFollowUps(data.suggested_followups);
+        }
         const aiMessage: Message = {
           id: `ai-${Date.now()}`,
           role: "assistant",
@@ -369,7 +372,7 @@ export default function SAIPage() {
           {/* Quick Follow-up Chips when conversation active */}
           {messages.length > 0 && (
             <div className="flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none">
-              {followUpSuggestions.map((suggestion, sIdx) => (
+              {dynamicFollowUps.map((suggestion, sIdx) => (
                 <button
                   key={sIdx}
                   onClick={() => handleSend(suggestion)}

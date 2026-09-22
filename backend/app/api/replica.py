@@ -1012,7 +1012,7 @@ async function sendTurboModalChat(queryOverride) {
     var load = document.getElementById('turboLoading');
     if (load) load.remove();
 
-    var rawAns = (data && data.answer) ? data.answer : 'Sharda University (NAAC A+) offers 130+ programs with up to 100% scholarships.';
+    var rawAns = (data && (data.answer || data.response)) ? (data.answer || data.response) : 'Sharda University (NAAC A+) offers 130+ programs with up to 100% scholarships.';
     var answerHtml = renderTurboMarkdown(rawAns);
 
     // AI message container
@@ -1042,12 +1042,13 @@ async function sendTurboModalChat(queryOverride) {
     }
 
     // Dynamic suggested follow-ups
+    var followups = (data && data.suggested_followups && data.suggested_followups.length > 0) ? data.suggested_followups : ['Scholarship criteria & eligibility', 'SUAT 2026 test pattern', 'Campus hostels & food mess', 'How to apply online'];
     aiBubbleHtml += '<div class="turbo-chat-chips-wrap">' +
-      '<span style="font-size:11px; color:#64748b; margin-right:4px; align-self:center;">Follow up:</span>' +
-      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What are the scholarship criteria for this?\')">Scholarship criteria</button>' +
-      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'How do I apply online?\')">How to apply</button>' +
-      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What is the hostel fee?\')">Hostel fees</button>' +
-    '</div>';
+      '<span style="font-size:11px; color:#64748b; margin-right:4px; align-self:center;">Quick follow-ups:</span>';
+    followups.forEach(function(chip) {
+      aiBubbleHtml += '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'' + escapeHtml(chip).replace(/'/g, "\\'") + '\')">' + escapeHtml(chip) + '</button>';
+    });
+    aiBubbleHtml += '</div>';
 
     aiBubbleHtml += '</div>';
     aiRow.innerHTML = aiBubbleHtml;

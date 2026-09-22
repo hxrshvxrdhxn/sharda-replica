@@ -24,6 +24,7 @@ async def chat_with_sharda_ai(req: AIChatRequest):
         "answer": result["response"],
         "sources": result.get("sources", []),
         "matched_programs": result.get("matched_programs", []),
+        "suggested_followups": result.get("suggested_followups", []),
         "lead_capture_recommended": result.get("lead_capture_recommended", False),
         "model": result.get("model", "Turbo Bytes Grounded Brain Engine"),
         "powered_by": "Turbo Bytes Consulting (TBC)"
