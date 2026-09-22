@@ -293,13 +293,21 @@ class TurboBytesShardaBrainService:
         context_text = "\n\n---\n\n".join([f"[{c.get('title')}]:\n{c.get('content')}" for c in relevant_chunks])
 
         system_instruction = (
-            "You are 'Sharda AI (SAI)', the official Google Gemini-powered conversational counselor and knowledge assistant for Sharda University (NAAC A+ Accredited, Greater Noida, Delhi NCR), built by Turbo Bytes Consulting (TBC).\n\n"
-            "BEHAVIOR & PERSONA GUIDELINES:\n"
-            "1. You behave like Google Gemini, but specialized exclusively for Sharda University.\n"
-            "2. When the user says greetings like 'hi', 'hello', 'hey', 'good morning', warmly welcome them to Sharda University, introduce yourself as Sharda AI powered by Turbo Bytes Consulting (TBC), and proactively offer key topics they can explore (e.g., B.Tech CSE / MBA / MBBS programs, SUAT 2026 entrance exam, up to 100% scholarships, campus hostels, 1.00 Cr highest placement, or 130+ programs across 14 Schools).\n"
-            "3. When answering course, fee, or admission questions, always present structured, clean Markdown tables with Program Name, Duration, Annual Tuition Fee, Eligibility, and Career Highlights.\n"
-            "4. Highlight key institutional facts: NAAC A+ Grade, 63-acre lush campus in Greater Noida, 27,000+ students from 95+ countries, 100% placement support, 1,200+ bed hospital on campus.\n"
-            "5. Always be polite, structured, professional, and helpful. Use clear markdown formatting (headings, bullet points, tables)."
+            "You are 'Sharda AI (SAI)', the modern conversational admissions counselor and intelligence engine for Sharda University (NAAC A+ Accredited, Greater Noida, Delhi-NCR), engineered by Turbo Bytes Consulting (TBC).\n\n"
+            "RESPONSE FORMAT & STYLE RULES (STRICT & CRITICAL):\n"
+            "1. BE SHORT, CRISP & TO THE POINT: Answer the user's core question directly in the very first 1-2 sentences. Avoid long conversational preamble, repetitive filler, or disclaimers.\n"
+            "2. STRUCTURE WITH CLEAN BULLETS: Use concise bullet points for key data (e.g., Dates, Eligibility, Fees, Placement Package, Scholarships).\n"
+            "3. USE MINI TABLES ONLY WHEN NECESSARY: When comparing multiple courses or fee slabs, render a compact, clean markdown table.\n"
+            "4. ALWAYS INCLUDE CLICKABLE SOURCE PAGE LINKS WITH LINK ICONS: At the end of every response, provide 1 to 3 direct clickable markdown links to relevant university pages in this format:\n"
+            "   - 🔗 [Explore B.Tech CSE Details & Curriculum](/programmes/b-tech-cse)\n"
+            "   - 🔗 [Admissions 2026 Process & Application Form](/admissions)\n"
+            "   - 🔗 [SUAT 2026 Entrance Test & Slot Booking](/suat)\n"
+            "   - 🔗 [Scholarship Slabs & Eligibility Calculator](/scholarships)\n"
+            "   - 🔗 [Campus Hostels & Accommodation Charges](/hostel)\n"
+            "   - 🔗 [MBA Specialisations & Placements](/programmes/mba)\n"
+            "   - 🔗 [Medical & Allied Health Programs](/schools/medical-sciences-and-research)\n"
+            "5. GREETINGS: For 'hi', 'hello', 'hey', respond with a warm, snappy 2-sentence greeting and 4 quick clickable suggested paths.\n"
+            "6. ACCURACY: Ground all numbers (fees, dates, packages) strictly in Sharda University verified records. Sharda offers up to 100% merit scholarships, ₹1.00 Cr highest international package, and ₹45 LPA highest domestic package."
         )
 
         prompt = f"User Query: {query}\n\nVerified University Knowledge Context:\n{context_text}"
@@ -331,7 +339,27 @@ class TurboBytesShardaBrainService:
                     res = await client.post(gemini_url, json=payload)
                     if res.status_code == 200:
                         data = res.json()
-                        ai_text = data["candidates"][0]["content"]["parts"][0]["text"]
+                        ai_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                        
+                        # Ensure clickable links are present
+                        if not re.search(r'\[.*?\]\(.*?\)', ai_text):
+                            links_to_add = []
+                            if matched_programs:
+                                for p in matched_programs[:2]:
+                                    links_to_add.append(f"🔗 [{p.get('title')} Details & Fees]({p.get('url')})")
+                            elif any(w in query.lower() for w in ["admission", "apply", "deadline", "close", "last date", "when"]):
+                                links_to_add.append("🔗 [Admissions 2026 Process & Application Form](/admissions)")
+                                links_to_add.append("🔗 [Book SUAT 2026 Slot](/suat)")
+                            elif "scholarship" in query.lower():
+                                links_to_add.append("🔗 [Calculate Scholarship Slabs](/scholarships)")
+                            elif "hostel" in query.lower():
+                                links_to_add.append("🔗 [Campus Hostels & Accommodation](/hostel)")
+                            else:
+                                links_to_add.append("🔗 [Explore Academic Programmes](/programmes)")
+                                links_to_add.append("🔗 [Admissions 2026 Portal](/admissions)")
+                            
+                            ai_text += "\n\n" + "\n".join(links_to_add)
+
                         return {
                             "response": ai_text,
                             "sources": [c.get("title") for c in relevant_chunks],
@@ -362,128 +390,129 @@ class TurboBytesShardaBrainService:
     def generate_grounded_answer(self, query: str, chunks: List[Dict[str, Any]]) -> str:
         q = query.lower()
 
+        # Admission close / dates
+        if "close" in q or "deadline" in q or "last date" in q or "when" in q and "admission" in q:
+            return (
+                "**Admissions for 2026 at Sharda University are currently open.**\n\n"
+                "- **Early Phase 1 Applications**: Ongoing now (Priority for scholarship allocation & preferred branches)\n"
+                "- **SUAT 2026 Entrance Test**: Conducted continuously in online slots\n"
+                "- **Final Admission Deadline**: Typically closes by **July / August 2026** prior to academic session orientation\n"
+                "- **High Demand Notice**: Seats for **B.Tech CSE** and specialized AI tracks fill up quickly.\n\n"
+                "🔗 [Apply Now for Admissions 2026](/admissions)\n"
+                "🔗 [Book SUAT 2026 Slot](/suat)\n"
+                "🔗 [View All Academic Programmes & Eligibility](/programmes)"
+            )
+
         # Engineering / B.Tech / CSE
         if "engineering" in q or "b.tech" in q or "btech" in q or "cse" in q:
             return (
-                "### 🎓 Engineering & Technology at Sharda University (SET)\n\n"
-                "Sharda University's **School of Engineering and Technology (SET)** is **NBA & NAAC A+ Accredited** and approved by AICTE.\n\n"
-                "| Program | Specializations | Duration | Annual Fee | Eligibility |\n"
-                "| :--- | :--- | :--- | :--- | :--- |\n"
-                "| **B.Tech Computer Science & Engg.** | AI & ML, Cyber Security, Cloud Computing, Data Science | 4 Years | Rs. 2,20,000 | 10+2 with PCM/CS min 60% + SUAT/JEE |\n"
-                "| **B.Tech CSE (AI & ML)** | Deep Learning, NLP, Generative AI, Robotics | 4 Years | Rs. 2,35,000 | 10+2 with PCM min 60% + SUAT/JEE |\n"
-                "| **B.Tech Biotechnology** | Genetic Engg, Bioinformatics, Food Tech | 4 Years | Rs. 2,05,000 | 10+2 with PCB/PCM min 55% + SUAT |\n"
-                "| **M.Tech CSE / Data Science** | Distributed Systems, Advanced AI, Cloud | 2 Years | Rs. 1,20,000 | B.Tech/MCA min 50% + Gate/SUAT |\n\n"
-                "**Placement Highlights**:\n"
-                "- Highest Global Package: **1.00 Crore INR** (Amazon / Microsoft)\n"
-                "- Highest Domestic Package: **45.00 LPA**\n"
-                "- Top Recruiters: *Microsoft, Amazon, Cognizant, Wipro, TCS, Deloitte, Infosys, Tech Mahindra*.\n\n"
-                "💡 **Scholarships**: Up to **100% Tuition Fee Waiver** is available for students scoring 95%+ in 10+2. Would you like to check your scholarship eligibility or connect with an admissions counselor?"
+                "**B.Tech at Sharda University is NBA & NAAC A+ Accredited with up to 100% merit scholarships.**\n\n"
+                "| Program | Duration | Annual Fee | Eligibility |\n"
+                "| :--- | :--- | :--- | :--- |\n"
+                "| **B.Tech CSE (General / Core)** | 4 Years | ₹2,20,000 / yr | 10+2 PCM/CS ≥ 60% + SUAT/JEE |\n"
+                "| **B.Tech CSE (AI & ML)** | 4 Years | ₹2,35,000 / yr | 10+2 PCM ≥ 60% + SUAT/JEE |\n"
+                "| **B.Tech Biotechnology** | 4 Years | ₹2,05,000 / yr | 10+2 PCB/PCM ≥ 55% + SUAT |\n"
+                "| **M.Tech Data Science / CSE** | 2 Years | ₹1,20,000 / yr | B.Tech/MCA ≥ 50% + GATE/SUAT |\n\n"
+                "- **Placements**: ₹1.00 Crore International Highest | ₹45 LPA Domestic Highest (Amazon, Microsoft, TCS, Deloitte).\n"
+                "- **Scholarships**: Up to **100% Tuition Waiver** based on 10+2 board marks / JEE rank.\n\n"
+                "🔗 [Explore B.Tech CSE Details & Curriculum](/programmes/b-tech-cse)\n"
+                "🔗 [Apply for 2026 B.Tech Admissions](/admissions)\n"
+                "🔗 [Calculate Your Scholarship Slab](/scholarships)"
             )
 
         # MBA / Business
         if "mba" in q or "business" in q or "bba" in q or "management" in q:
             return (
-                "### 💼 Management Programs at Sharda University (SBS)\n\n"
-                "The **School of Business Studies (SBS)** is a member of **IACBE (USA)** and holds **NAAC A+ accreditation**.\n\n"
-                "| Program | Specializations | Duration | Annual Fee | Eligibility |\n"
-                "| :--- | :--- | :--- | :--- | :--- |\n"
-                "| **MBA (Dual Specialization)** | Marketing, Finance, HR, Business Analytics, International Business | 2 Years | Rs. 3,85,000 | Graduation 50% + SUAT/CAT/MAT/XAT + GD/PI |\n"
-                "| **MBA (Business Analytics)** | Big Data, Python for Business, Predictive Modeling | 2 Years | Rs. 4,10,000 | Graduation 50% + SUAT/CAT/MAT |\n"
-                "| **BBA (Hons / Research)** | E-Commerce, Finance, Marketing, Entrepreneurship | 3-4 Years | Rs. 1,85,000 | 10+2 with 50% marks + SUAT |\n\n"
-                "**Top Hiring Partners**: *Deloitte, KPMG, EY, PwC, HDFC Bank, Amazon, Flipkart, ICICI Bank*.\n\n"
-                "Would you like to register for the upcoming MBA Counseling & GD/PI Round?"
+                "**School of Business Studies (SBS) holds IACBE (USA) membership & NAAC A+ Grade.**\n\n"
+                "| Program | Duration | Annual Fee | Eligibility |\n"
+                "| :--- | :--- | :--- | :--- |\n"
+                "| **MBA (Dual Specialization)** | 2 Years | ₹3,85,000 / yr | Graduation ≥ 50% + MAT/CAT/XAT/SUAT + GD/PI |\n"
+                "| **MBA (Business Analytics)** | 2 Years | ₹4,10,000 / yr | Graduation ≥ 50% + SUAT/CAT/MAT |\n"
+                "| **BBA (Hons / Research)** | 3-4 Years | ₹1,85,000 / yr | 10+2 ≥ 50% + SUAT |\n\n"
+                "- **Hiring Partners**: Deloitte, KPMG, EY, PwC, Amazon, HDFC Bank, ICICI.\n"
+                "- **Scholarships**: Up to 100% tuition waiver for high CAT/MAT percentiles.\n\n"
+                "🔗 [Explore MBA Programs & Specialisations](/programmes/mba)\n"
+                "🔗 [Register for MBA GD/PI & Counseling](/admissions)"
             )
 
         # Biology / Bio-Science / Biotech
         if "biology" in q or "bio" in q or "botany" in q or "microbiology" in q:
             return (
-                "### 🔬 Bio-Sciences & Biotechnology Programs\n\n"
-                "The **School of Bio-Science & Technology** offers world-class research laboratories and industrial collaborations.\n\n"
+                "**School of Bio-Science & Technology offers DST-FIST analytical research facilities.**\n\n"
                 "| Program | Duration | Annual Fee | Eligibility |\n"
                 "| :--- | :--- | :--- | :--- |\n"
-                "| **B.Sc. (Hons) Biotechnology** | 3-4 Years | Rs. 1,45,000 | 10+2 PCB/PCM with min 50% |\n"
-                "| **B.Sc. (Hons) Microbiology** | 3-4 Years | Rs. 1,40,000 | 10+2 PCB with min 50% |\n"
-                "| **M.Sc. Biotechnology** | 2 Years | Rs. 1,15,000 | B.Sc. in Biological Sciences 50% |\n"
-                "| **M.Sc. Food Science & Tech** | 2 Years | Rs. 1,20,000 | B.Sc. Food/Life Sciences 50% |\n\n"
-                "**Key Facilities**: Fermentation labs, Plant Tissue Culture, Bioinformatics Center, and DST-FIST supported analytical instruments."
-            )
-
-        # Humanities & Social Sciences
-        if "humanities" in q or "arts" in q or "social" in q or "psychology" in q or "english" in q:
-            return (
-                "### 🎨 School of Humanities & Social Sciences (SHSS)\n\n"
-                "Offering diverse liberal arts and social research disciplines.\n\n"
-                "| Program | Duration | Annual Fee | Eligibility |\n"
-                "| :--- | :--- | :--- | :--- |\n"
-                "| **BA (Hons) Psychology** | 3-4 Years | Rs. 1,25,000 | 10+2 in any stream min 50% |\n"
-                "| **BA (Hons) English** | 3-4 Years | Rs. 1,15,000 | 10+2 in any stream min 50% |\n"
-                "| **BA (Hons) Political Science** | 3-4 Years | Rs. 1,15,000 | 10+2 in any stream min 50% |\n"
-                "| **MA Clinical Psychology** | 2 Years | Rs. 1,40,000 | BA/B.Sc. Psychology min 50% |\n\n"
-                "Includes hands-on psychometric assessment labs, language labs, and community engagement initiatives."
+                "| **B.Sc. (Hons) Biotechnology** | 3-4 Years | ₹1,45,000 / yr | 10+2 PCB/PCM ≥ 50% |\n"
+                "| **B.Sc. (Hons) Microbiology** | 3-4 Years | ₹1,40,000 / yr | 10+2 PCB ≥ 50% |\n"
+                "| **M.Sc. Biotechnology** | 2 Years | ₹1,15,000 / yr | B.Sc. in Life Sciences ≥ 50% |\n\n"
+                "🔗 [View Bio-Sciences Programs](/programmes)\n"
+                "🔗 [Apply for Admissions 2026](/admissions)"
             )
 
         # Medical & Dental
         if "medical" in q or "mbbs" in q or "dental" in q or "bds" in q or "doctor" in q:
             return (
-                "### 🏥 Medical & Dental Sciences (SMS&R and SDS)\n\n"
-                "Sharda Hospital is a **1,200+ bed NABH-accredited super-speciality hospital** on campus.\n\n"
-                "| Program | Duration | Intake | Eligibility & Regulatory Body |\n"
-                "| :--- | :--- | :--- | :--- |\n"
-                "| **MBBS** | 5.5 Years (inc. 1 yr internship) | 250 Seats | 10+2 PCB min 50% + NEET-UG Qualified (NMC) |\n"
-                "| **BDS (Dental Surgery)** | 5 Years | 100 Seats | 10+2 PCB min 50% + NEET-UG Qualified (DCI) |\n"
-                "| **MD / MS Clinical** | 3 Years | Various | MBBS + NEET-PG Qualified |\n"
-                "| **MDS (Dental Specialities)** | 3 Years | 27 Seats | BDS + NEET-MDS Qualified |\n\n"
-                "Admissions are routed through centralized UP State DGME counselling."
+                "**Medical education at Sharda is anchored by a 1,200+ bed super-speciality hospital.**\n\n"
+                "- **MBBS**: 5.5 Years (inc. 1 yr internship) | 250 Seats | 10+2 PCB ≥ 50% + NEET-UG (UP DGME Counseling)\n"
+                "- **BDS (Dental)**: 5 Years | 100 Seats | 10+2 PCB ≥ 50% + NEET-UG\n"
+                "- **MD / MS Clinical**: 3 Years | NEET-PG Qualified\n\n"
+                "🔗 [SMS&R Medical Sciences Details](/schools/medical-sciences-and-research)\n"
+                "🔗 [Check Medical Admission Guidelines](/admissions)"
             )
 
         # Law
         if "law" in q or "llb" in q or "ll.b" in q or "ba llb" in q:
             return (
-                "### ⚖️ Legal Studies at Sharda School of Law\n\n"
-                "Approved by the **Bar Council of India (BCI)** with active Moot Court societies and Legal Aid clinics.\n\n"
-                "| Program | Duration | Annual Fee | Eligibility |\n"
-                "| :--- | :--- | :--- | :--- |\n"
-                "| **BA LL.B. (Integrated)** | 5 Years | Rs. 1,95,000 | 10+2 min 50% + SUAT / CLAT / LSAT |\n"
-                "| **BBA LL.B. (Integrated)** | 5 Years | Rs. 1,95,000 | 10+2 min 50% + SUAT / CLAT / LSAT |\n"
-                "| **LL.B. (3 Years)** | 3 Years | Rs. 1,75,000 | Graduation in any discipline min 50% |\n"
-                "| **LL.M. (1 Year)** | 1 Year | Rs. 1,40,000 | LL.B. min 50% + Entrance Test |"
+                "**Sharda School of Law is BCI-approved with moot courts and legal aid clinics.**\n\n"
+                "- **B.A. LL.B. / B.B.A. LL.B. (Integrated)**: 5 Years | ₹1,95,000 / yr | 10+2 ≥ 50% + CLAT/LSAT/SUAT\n"
+                "- **LL.B. (3 Years)**: 3 Years | ₹1,75,000 / yr | Graduation ≥ 50%\n"
+                "- **LL.M. (1 Year)**: 1 Year | ₹1,40,000 / yr | LL.B. ≥ 50%\n\n"
+                "🔗 [Explore Law Programs](/programmes)\n"
+                "🔗 [Apply Online for Law Admission](/admissions)"
             )
 
         # Scholarship
         if "scholarship" in q or "fee waiver" in q:
             return (
-                "### 🏆 Sharda University Merit Scholarships (Up to 100% Fee Waiver)\n\n"
-                "| 10+2 Board Percentage / Score | Tuition Fee Waiver |\n"
+                "**Sharda University offers Merit Scholarships with up to 100% Tuition Fee Waiver:**\n\n"
+                "| 10+2 Board / Score | Tuition Fee Waiver |\n"
                 "| :--- | :--- |\n"
-                "| **95.00% & Above** | **100% Tuition Fee Waiver** |\n"
-                "| **90.00% to 94.99%** | **50% Tuition Fee Waiver** |\n"
-                "| **85.00% to 89.99%** | **40% Tuition Fee Waiver** |\n"
-                "| **80.00% to 84.99%** | **20% Tuition Fee Waiver** |\n"
-                "| **75.00% to 79.99%** | **10% Tuition Fee Waiver** |\n\n"
-                "*Special Category Benefits*: Sports Excellence (up to 100%), Defense/Para-military wards (5%), Sibling discount (5%), and Innovation/Idea Scholarships."
+                "| **95.00% & Above** | **100% Waiver** |\n"
+                "| **90.00% – 94.99%** | **50% Waiver** |\n"
+                "| **85.00% – 89.99%** | **40% Waiver** |\n"
+                "| **80.00% – 84.99%** | **20% Waiver** |\n"
+                "| **75.00% – 79.99%** | **10% Waiver** |\n\n"
+                "- *Additional Categories*: Sports Excellence (up to 100%), Defense Wards (5%), Siblings (5%).\n\n"
+                "🔗 [Calculate Scholarship Eligibility](/scholarships)\n"
+                "🔗 [Apply for 2026 Admissions](/admissions)"
             )
 
         # Hostel
         if "hostel" in q or "accommodation" in q or "room" in q or "mess" in q:
             return (
-                "### 🏢 Campus Hostel Accommodation & Charges\n\n"
-                "- **AC 3-Seater**: Rs. 1,61,000 / year (+ Rs. 10,000 refundable security deposit)\n"
-                "- **AC 2-Seater**: Rs. 1,92,000 / year (+ Rs. 10,000 refundable security deposit)\n"
-                "- **Non-AC 3-Seater**: Rs. 1,16,000 / year\n"
-                "- **Single Studio Apartment (AC)**: Rs. 2,35,000 / year\n\n"
-                "**Amenities Included**: 4 nutritious daily meals, 24/7 Wi-Fi, laundry service, housekeeping, gym access, and biometric security."
+                "**Campus Hostel Accommodation (Includes 4 daily meals, Wi-Fi, Gym & Housekeeping):**\n\n"
+                "- **AC 3-Seater**: ₹1,61,000 / year (+ ₹10,000 refundable security)\n"
+                "- **AC 2-Seater**: ₹1,92,000 / year (+ ₹10,000 refundable security)\n"
+                "- **Non-AC 3-Seater**: ₹1,16,000 / year\n"
+                "- **Single Studio Apartment (AC)**: ₹2,35,000 / year\n\n"
+                "🔗 [View Hostel Details & Virtual Tour](/hostel)\n"
+                "🔗 [Admissions & Campus Booking](/admissions)"
             )
 
         if chunks:
-            response_text = f"Here is the verified information regarding your query from Sharda University's knowledge base:\n\n"
-            for c in chunks:
-                response_text += f"**{c.get('title')}**\n{c.get('content')}\n\n"
+            response_text = f"**{chunks[0].get('title')}**\n\n{chunks[0].get('content')}\n\n"
+            response_text += "🔗 [Visit Admissions 2026 Portal](/admissions)\n🔗 [Explore Academic Programs](/programmes)"
             return response_text.strip()
 
         return (
-            "Welcome to **Sharda University** (NAAC A+ Accredited).\n\n"
-            "I can assist you with details regarding our 14+ Schools, 130+ UG/PG programs, annual fee structures, SUAT entrance exam, up to 100% merit scholarships, campus hostels, and placement records.\n\n"
-            "What specific course or department would you like to explore?"
+            "**Welcome to Sharda AI Counselor (NAAC A+ Accredited).**\n\n"
+            "I can assist you with quick details on:\n"
+            "- **B.Tech, MBA, Medical, Law & 130+ degree courses**\n"
+            "- **SUAT 2026 entrance test & application deadlines**\n"
+            "- **Up to 100% merit scholarship slabs**\n"
+            "- **Campus hostel fees & ₹1.00 Cr placement records**\n\n"
+            "🔗 [Explore Programs Catalog](/programmes)\n"
+            "🔗 [Admissions 2026 Overview](/admissions)\n"
+            "🔗 [Scholarship Calculator](/scholarships)"
         )
 
 rag_service = TurboBytesShardaBrainService()

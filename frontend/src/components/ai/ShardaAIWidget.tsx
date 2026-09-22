@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   RefreshCw
 } from "lucide-react";
+import { TurboMarkdownView } from "./TurboMarkdownView";
 
 interface ShardaAIWidgetProps {
   initialPrompt?: string;
@@ -189,9 +190,11 @@ export const ShardaAIWidget: React.FC<ShardaAIWidgetProps> = ({
                     : "bg-[#23394c]/90 text-gray-100 rounded-tl-none border border-gray-700/60 shadow-md"
                 }`}
               >
-                <div className="prose prose-invert prose-xs max-w-none whitespace-pre-wrap">
-                  {m.content}
-                </div>
+                {m.role === "user" ? (
+                  <p className="font-semibold text-xs sm:text-sm whitespace-pre-wrap">{m.content}</p>
+                ) : (
+                  <TurboMarkdownView content={m.content} />
+                )}
 
                 {/* Sources info */}
                 {m.sources && m.sources.length > 0 && (

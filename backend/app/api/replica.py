@@ -620,6 +620,9 @@ function renderTurboMarkdown(md) {
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
   
+  // Convert [Text](url) or 🔗 [Text](url) to interactive link pills
+  html = html.replace(/(?:🔗\s*)?\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="turbo-ai-link-pill" style="display:inline-flex; align-items:center; gap:5px; background:rgba(234,169,20,0.15); border:1px solid rgba(234,169,20,0.45); color:#fde68a; padding:4px 10px; border-radius:8px; font-size:11.5px; font-weight:600; text-decoration:none; margin:3px 4px 3px 0; transition:all 0.2s;"><svg style="width:12px; height:12px; fill:none; stroke:#EAA914; stroke-width:2;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>$1 <span style="opacity:0.7;">&rarr;</span></a>');
+  
   var lines = html.split('\n');
   var inTable = false;
   var tableHtml = '';
