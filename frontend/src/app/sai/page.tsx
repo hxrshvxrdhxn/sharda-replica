@@ -36,7 +36,7 @@ export default function SAIPage() {
     setAnswer(null);
 
     try {
-      const resp = await fetch("http://127.0.0.1:8000/api/v1/ai/chat", {
+      const resp = await fetch("/api/v1/ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: text })
@@ -161,8 +161,8 @@ export default function SAIPage() {
       </main>
 
       {/* Footer */}
-      <footer className="p-6 border-t border-gray-800 text-center text-xs text-gray-500">
-        © 2026 Sharda University. Conversational AI Platform powered by Google Gemini.
+      <footer className="p-6 border-t border-gray-800 text-center text-xs text-gray-400">
+        © 2026 Sharda University. Conversational AI Platform powered by ⚡ <strong className="text-amber-400">Turbo Bytes Consulting (TBC)</strong> & Google Gemini.
       </footer>
     </div>
   );

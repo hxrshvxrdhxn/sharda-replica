@@ -90,7 +90,7 @@ export default function AdminDashboard() {
   // Fetch Leads
   const fetchLeads = async () => {
     try {
-      let url = `http://127.0.0.1:8000/api/v1/leads?limit=50`;
+      let url = `/api/v1/leads?limit=50`;
       if (leadFilter.status) url += `&status=${leadFilter.status}`;
       if (leadFilter.priority) url += `&priority=${leadFilter.priority}`;
       if (leadFilter.search) url += `&search=${encodeURIComponent(leadFilter.search)}`;
@@ -101,7 +101,7 @@ export default function AdminDashboard() {
         setLeads(data.leads || []);
       }
 
-      const aRes = await fetch("http://127.0.0.1:8000/api/v1/leads/analytics");
+      const aRes = await fetch("/api/v1/leads/analytics");
       if (aRes.ok) {
         setLeadAnalytics(await aRes.json());
       }
@@ -113,10 +113,10 @@ export default function AdminDashboard() {
   // Fetch CMS
   const fetchCMS = async () => {
     try {
-      const bRes = await fetch("http://127.0.0.1:8000/api/v1/cms/banners");
+      const bRes = await fetch("/api/v1/cms/banners");
       if (bRes.ok) setBanners(await bRes.json());
 
-      const aRes = await fetch("http://127.0.0.1:8000/api/v1/cms/announcements");
+      const aRes = await fetch("/api/v1/cms/announcements");
       if (aRes.ok) setAnnouncements(await aRes.json());
     } catch (e) {
       console.error("Error fetching CMS:", e);
@@ -126,7 +126,7 @@ export default function AdminDashboard() {
   // Fetch Audit Status
   const fetchAuditStatus = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/v1/audit/status");
+      const res = await fetch("/api/v1/audit/status");
       if (res.ok) {
         const data = await res.json();
         setAuditSummary(data);
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
   const handleTriggerAudit = async () => {
     setIsAuditing(true);
     try {
-      let url = `http://127.0.0.1:8000/api/v1/audit/run?limit=${auditLimit}`;
+      let url = `/api/v1/audit/run?limit=${auditLimit}`;
       if (auditCategory) url += `&category=${auditCategory}`;
       await fetch(url, { method: "POST" });
       setTimeout(fetchAuditStatus, 2000);
@@ -153,7 +153,7 @@ export default function AdminDashboard() {
   // Update Lead Status
   const handleUpdateLeadStatus = async (leadId: string, status: string) => {
     try {
-      await fetch(`http://127.0.0.1:8000/api/v1/leads/${leadId}/status`, {
+      await fetch(`/api/v1/leads/${leadId}/status`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status })
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
   const handleCreateBanner = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch("http://127.0.0.1:8000/api/v1/cms/banners", {
+      await fetch("/api/v1/cms/banners", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newBanner)
@@ -184,7 +184,7 @@ export default function AdminDashboard() {
   const handleCreateAnnouncement = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch("http://127.0.0.1:8000/api/v1/cms/announcements", {
+      await fetch("/api/v1/cms/announcements", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newAnnouncement)
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
     if (!testQuery.trim()) return;
     setAiLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/v1/ai/chat", {
+      const res = await fetch("/api/v1/ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: testQuery })
@@ -218,7 +218,7 @@ export default function AdminDashboard() {
     if (!searchQuery.trim()) return;
     setSearchLoading(true);
     try {
-      let url = `http://127.0.0.1:8000/api/v1/search?q=${encodeURIComponent(searchQuery)}`;
+      let url = `/api/v1/search?q=${encodeURIComponent(searchQuery)}`;
       if (searchCategory) url += `&category=${searchCategory}`;
       const res = await fetch(url);
       if (res.ok) {

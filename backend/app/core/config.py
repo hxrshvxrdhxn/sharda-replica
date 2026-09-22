@@ -8,8 +8,8 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     
     # AI & Knowledge Engine
-    GEMINI_API_KEY: Optional[str] = os.getenv("GEMINI_API_KEY", "")
-    GEMINI_MODEL: str = "gemini-1.5-flash"
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
     
     # Marketing & CRM
     CRM_WEBHOOK_URL: Optional[str] = os.getenv("CRM_WEBHOOK_URL", "https://httpbin.org/post")

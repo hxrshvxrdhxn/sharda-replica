@@ -293,12 +293,13 @@ class TurboBytesShardaBrainService:
         context_text = "\n\n---\n\n".join([f"[{c.get('title')}]:\n{c.get('content')}" for c in relevant_chunks])
 
         system_instruction = (
-            "You are 'Sharda AI (SAI)', the official conversational search engine and counselor for Sharda University (NAAC A+ Accredited, Delhi NCR), powered by Turbo Bytes Consulting.\n"
-            "STRICT GROUNDING RULES:\n"
-            "1. Answer ONLY based on verified Sharda University information.\n"
-            "2. When answering course or fee inquiries, present details in clean Markdown tables (Program, Duration, Annual Fee, Eligibility).\n"
-            "3. Mention up to 100% merit scholarships, SUAT 2026 entrance exam, and 100% placement track record.\n"
-            "4. Always maintain a helpful, welcoming, and prestigious university counselor persona."
+            "You are 'Sharda AI (SAI)', the official Google Gemini-powered conversational counselor and knowledge assistant for Sharda University (NAAC A+ Accredited, Greater Noida, Delhi NCR), built by Turbo Bytes Consulting (TBC).\n\n"
+            "BEHAVIOR & PERSONA GUIDELINES:\n"
+            "1. You behave like Google Gemini, but specialized exclusively for Sharda University.\n"
+            "2. When the user says greetings like 'hi', 'hello', 'hey', 'good morning', warmly welcome them to Sharda University, introduce yourself as Sharda AI powered by Turbo Bytes Consulting (TBC), and proactively offer key topics they can explore (e.g., B.Tech CSE / MBA / MBBS programs, SUAT 2026 entrance exam, up to 100% scholarships, campus hostels, 1.00 Cr highest placement, or 130+ programs across 14 Schools).\n"
+            "3. When answering course, fee, or admission questions, always present structured, clean Markdown tables with Program Name, Duration, Annual Tuition Fee, Eligibility, and Career Highlights.\n"
+            "4. Highlight key institutional facts: NAAC A+ Grade, 63-acre lush campus in Greater Noida, 27,000+ students from 95+ countries, 100% placement support, 1,200+ bed hospital on campus.\n"
+            "5. Always be polite, structured, professional, and helpful. Use clear markdown formatting (headings, bullet points, tables)."
         )
 
         prompt = f"User Query: {query}\n\nVerified University Knowledge Context:\n{context_text}"
@@ -306,15 +307,23 @@ class TurboBytesShardaBrainService:
         if settings.GEMINI_API_KEY:
             try:
                 gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{settings.GEMINI_MODEL}:generateContent?key={settings.GEMINI_API_KEY}"
+                
+                # Build conversation contents if history provided
+                contents = []
+                if conversation_history:
+                    for msg in conversation_history[-4:]:
+                        role = "user" if msg.get("role") == "user" else "model"
+                        contents.append({"role": role, "parts": [{"text": msg.get("content", "")}]})
+                
+                contents.append({
+                    "role": "user",
+                    "parts": [{"text": f"{system_instruction}\n\n{prompt}"}]
+                })
+
                 payload = {
-                    "contents": [
-                        {
-                            "role": "user",
-                            "parts": [{"text": f"{system_instruction}\n\n{prompt}"}]
-                        }
-                    ],
+                    "contents": contents,
                     "generationConfig": {
-                        "temperature": 0.2,
+                        "temperature": 0.25,
                         "maxOutputTokens": 1024
                     }
                 }
@@ -328,9 +337,11 @@ class TurboBytesShardaBrainService:
                             "sources": [c.get("title") for c in relevant_chunks],
                             "matched_programs": matched_programs,
                             "lead_capture_recommended": self.should_trigger_lead_capture(query),
-                            "model": f"{settings.GEMINI_MODEL} (Turbo Bytes Brain Engine)",
-                            "powered_by": "Turbo Bytes Consulting"
+                            "model": f"{settings.GEMINI_MODEL} (Turbo Bytes Consulting)",
+                            "powered_by": "Turbo Bytes Consulting (TBC)"
                         }
+                    else:
+                        logger.error(f"Gemini API returned status {res.status_code}: {res.text}")
             except Exception as e:
                 logger.error(f"Gemini API call failed: {e}. Falling back to deterministic knowledge responder.")
 
@@ -341,7 +352,7 @@ class TurboBytesShardaBrainService:
             "matched_programs": matched_programs,
             "lead_capture_recommended": self.should_trigger_lead_capture(query),
             "model": "Turbo Bytes Grounded Brain Engine",
-            "powered_by": "Turbo Bytes Consulting"
+            "powered_by": "Turbo Bytes Consulting (TBC)"
         }
 
     def should_trigger_lead_capture(self, query: str) -> bool:

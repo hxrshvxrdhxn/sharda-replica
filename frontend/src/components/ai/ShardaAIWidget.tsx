@@ -73,7 +73,7 @@ export const ShardaAIWidget: React.FC<ShardaAIWidgetProps> = ({
 
     try {
       // Call backend AI endpoint
-      const response = await fetch("http://127.0.0.1:8000/api/v1/ai/chat", {
+      const response = await fetch("/api/v1/ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -138,10 +138,10 @@ export const ShardaAIWidget: React.FC<ShardaAIWidgetProps> = ({
               <div className="flex items-center space-x-2">
                 <h3 className="text-base font-bold tracking-tight">Sharda AI (SAI) Assistant</h3>
                 <span className="text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-full">
-                  Gemini Grounded
+                  ⚡ Powered by Turbo Bytes Consulting (TBC)
                 </span>
               </div>
-              <p className="text-xs text-gray-400">Strictly verified domain intelligence for Sharda University</p>
+              <p className="text-xs text-gray-400">Google Gemini-powered intelligent counselor for Sharda University</p>
             </div>
           </div>
 

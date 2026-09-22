@@ -21,7 +21,7 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-AI_WIDGET_INJECTION = """
+AI_WIDGET_INJECTION = r"""
 <!-- ========================================================================= -->
 <!-- TURBO BYTES CONSULTING - SHARDA AI KNOWLEDGE BRAIN & SEARCH ENGINE ENGINE -->
 <!-- ========================================================================= -->
@@ -396,7 +396,7 @@ body.home .turbo-ai-floating-bar {
 <!-- Floating Global AI Search Bar -->
 <div class="turbo-ai-floating-bar" id="turboFloatBar">
   <span class="turbo-sparkle-icon">✨</span>
-  <input type="text" id="turboFloatInput" class="turbo-ai-main-input" placeholder="Ask Sharda AI (e.g. B.Tech CSE vs MBA fees, scholarships, SUAT 2026)..." oninput="handleTurboSuggest(this.value, 'float')" onkeypress="if(event.key==='Enter') triggerTurboSearch(this.value)" autocomplete="off" />
+  <input type="text" id="turboFloatInput" class="turbo-ai-main-input" placeholder="Ask Sharda AI (e.g. B.Tech CSE vs MBA fees, scholarships, SUAT 2026)..." oninput="handleTurboSuggest(this.value, 'float')" onkeydown="if(event.key==='Enter'){event.preventDefault(); triggerTurboSearch(this.value);}" autocomplete="off" />
   <button class="turbo-send-plane-btn" onclick="triggerTurboSearch(document.getElementById('turboFloatInput').value)">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="#EAA914"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
   </button>
@@ -412,18 +412,18 @@ body.home .turbo-ai-floating-bar {
         <span style="font-size: 22px; margin-right: 8px;">🎓</span>
         <div>
           <strong style="font-size: 15px;">Sharda AI Knowledge Brain</strong>
-          <span class="turbo-powered-chip">⚡ Powered by Turbo Bytes Consulting</span>
+          <span class="turbo-powered-chip">⚡ Powered by Turbo Bytes Consulting (TBC)</span>
         </div>
       </div>
       <button onclick="closeTurboModal()" style="background: none; border: none; color: #cbd5e1; font-size: 26px; cursor: pointer; line-height: 1;">&times;</button>
     </div>
     <div class="turbo-ai-modal-body" id="turboChatBody">
       <div style="background: #1f3345; padding: 14px 18px; border-radius: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);">
-        Hello! I am <strong>Sharda AI</strong>, powered by <strong>Turbo Bytes Consulting</strong>. I have indexed all 2,388 pages across Sharda University (NAAC A+ Accredited). Ask me about programs, fee structures, SUAT 2026 entrance exam, up to 100% scholarships, hostels, or placement track records.
+        Hello! I am <strong>Sharda AI</strong>, powered by <strong>Turbo Bytes Consulting (TBC)</strong> and Google Gemini. I have indexed all 2,388 pages across Sharda University (NAAC A+ Accredited). Ask me about programs, fee structures, SUAT 2026 entrance exam, up to 100% scholarships, hostels, or placement track records.
       </div>
     </div>
     <div class="turbo-ai-modal-footer">
-      <input type="text" id="turboModalInput" class="turbo-ai-main-input" style="background: #162430; border: 1px solid #334155; border-radius: 10px; padding: 10px 14px;" placeholder="Ask follow-up question or explore more courses..." onkeypress="if(event.key==='Enter') sendTurboModalChat()" />
+      <input type="text" id="turboModalInput" class="turbo-ai-main-input" style="background: #162430; border: 1px solid #334155; border-radius: 10px; padding: 10px 14px;" placeholder="Ask follow-up question or explore more courses..." onkeydown="if(event.key==='Enter'){event.preventDefault(); sendTurboModalChat();}" />
       <button class="turbo-ai-action-btn" onclick="sendTurboModalChat()">Send</button>
     </div>
   </div>
@@ -521,6 +521,57 @@ body.home .turbo-ai-floating-bar {
 <script>
 var suggestDebounceTimer = null;
 
+function renderTurboMarkdown(md) {
+  if (!md) return '';
+  var html = md;
+  html = html.replace(/```([\s\S]*?)```/g, '<pre style="background:#0f1922; padding:10px; border-radius:8px; overflow-x:auto;"><code>$1</code></pre>');
+  html = html.replace(/^### (.*$)/gim, '<h4 style="color:#EAA914; margin:10px 0 4px 0; font-size:14.5px; font-weight:700;">$1</h4>');
+  html = html.replace(/^## (.*$)/gim, '<h3 style="color:#EAA914; margin:12px 0 6px 0; font-size:16px; font-weight:700;">$1</h3>');
+  html = html.replace(/^# (.*$)/gim, '<h2 style="color:#EAA914; margin:14px 0 8px 0; font-size:17.5px; font-weight:700;">$1</h2>');
+  html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  
+  var lines = html.split('\n');
+  var inTable = false;
+  var tableHtml = '';
+  var resLines = [];
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i].trim();
+    if (line.startsWith('|') && line.endsWith('|')) {
+      if (line.match(/^\|[\s\-:]+\|$/)) {
+        continue;
+      }
+      if (!inTable) {
+        inTable = true;
+        tableHtml = '<div style="overflow-x:auto; margin:12px 0;"><table style="width:100%; border-collapse:collapse; font-size:12.5px;">';
+        var cells = line.split('|').slice(1, -1);
+        tableHtml += '<thead><tr style="background:rgba(234,169,20,0.25); color:#EAA914;">' + cells.map(function(c) { return '<th style="border:1px solid rgba(255,255,255,0.15); padding:8px 10px; text-align:left;">' + c.trim() + '</th>'; }).join('') + '</tr></thead><tbody>';
+      } else {
+        var cells = line.split('|').slice(1, -1);
+        tableHtml += '<tr>' + cells.map(function(c) { return '<td style="border:1px solid rgba(255,255,255,0.12); padding:6px 10px; color:#e2e8f0;">' + c.trim() + '</td>'; }).join('') + '</tr>';
+      }
+    } else {
+      if (inTable) {
+        tableHtml += '</tbody></table></div>';
+        resLines.push(tableHtml);
+        inTable = false;
+        tableHtml = '';
+      }
+      if (line.startsWith('- ') || line.startsWith('* ')) {
+        resLines.push('<li style="margin-left:18px; margin-bottom:4px; color:#cbd5e1;">' + line.substring(2) + '</li>');
+      } else if (line.length > 0) {
+        resLines.push('<p style="margin:6px 0; line-height:1.55;">' + line + '</p>');
+      }
+    }
+  }
+  if (inTable) {
+    tableHtml += '</tbody></table></div>';
+    resLines.push(tableHtml);
+  }
+  return resLines.join('');
+}
+
 function handleTurboSuggest(val, source) {
   clearTimeout(suggestDebounceTimer);
   var targetBox = source === 'float' ? document.getElementById('turboFloatSuggest') : document.getElementById('turboHeroSuggest');
@@ -533,7 +584,7 @@ function handleTurboSuggest(val, source) {
 
   suggestDebounceTimer = setTimeout(async function() {
     try {
-      var res = await fetch('http://127.0.0.1:8000/api/v1/ai/suggest?q=' + encodeURIComponent(val.trim()));
+      var res = await fetch('/api/v1/ai/suggest?q=' + encodeURIComponent(val.trim()));
       var data = await res.json();
       if (data.suggestions && data.suggestions.length > 0) {
         var html = '';
@@ -561,13 +612,37 @@ document.addEventListener('click', function(e) {
   if (floatS && !e.target.closest('#turboFloatBar')) floatS.style.display = 'none';
   if (heroS && !e.target.closest('#turboHeroSearch')) heroS.style.display = 'none';
 
+  // Intercept any search link clicks to open Sharda AI modal instead of external navigation
+  var searchLink = e.target.closest('a[href="/search"], a[href*="sharda.ac.in/search"], a.search, a.search-box');
+  if (searchLink) {
+    e.preventDefault();
+    e.stopPropagation();
+    openTurboModal("What are the top programmes at Sharda University?");
+    return false;
+  }
+
   // Intercept brochure clicks
-  var brochureBtn = e.target.closest('a[href*="brochure"], a[href*="download"], button:contains("Brochure")');
+  var brochureBtn = e.target.closest('a[href*="brochure"], a[href*="download"]');
   if (brochureBtn && !e.target.closest('.turbo-ai-modal')) {
     e.preventDefault();
     openBrochureModal();
   }
-});
+}, true);
+
+// Global form submission interceptor for search forms
+document.addEventListener('submit', function(e) {
+  var form = e.target;
+  if (form && (form.id === 'turboBrochureForm')) return;
+  var act = form.getAttribute('action') || '';
+  if (act.includes('search') || form.querySelector('input[name*="search"], input[id*="search"]')) {
+    e.preventDefault();
+    e.stopPropagation();
+    var inp = form.querySelector('input[type="text"]');
+    var val = inp ? inp.value.trim() : '';
+    openTurboModal(val || "What are the top programmes at Sharda University?");
+    return false;
+  }
+}, true);
 
 function openBrochureModal() {
   var modal = document.getElementById('turboBrochureModal');
@@ -611,7 +686,7 @@ async function handleBrochureSubmit(e) {
   var course = document.getElementById('bmCourse').value;
 
   try {
-    await fetch('http://127.0.0.1:8000/api/v1/leads/capture', {
+    await fetch('/api/v1/leads/capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -629,7 +704,8 @@ async function handleBrochureSubmit(e) {
 }
 
 function openTurboModal(initialQuery) {
-  document.getElementById('turboModal').style.display = 'flex';
+  var modal = document.getElementById('turboModal');
+  if (modal) modal.style.display = 'flex';
   if (initialQuery && initialQuery.trim()) {
     document.getElementById('turboModalInput').value = initialQuery;
     sendTurboModalChat();
@@ -637,7 +713,8 @@ function openTurboModal(initialQuery) {
 }
 
 function closeTurboModal() {
-  document.getElementById('turboModal').style.display = 'none';
+  var modal = document.getElementById('turboModal');
+  if (modal) modal.style.display = 'none';
 }
 
 function triggerTurboSearch(query) {
@@ -665,7 +742,7 @@ async function sendTurboModalChat() {
   body.scrollTop = body.scrollHeight;
 
   try {
-    var res = await fetch('http://127.0.0.1:8000/api/v1/ai/chat', {
+    var res = await fetch('/api/v1/ai/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: q })
@@ -674,7 +751,7 @@ async function sendTurboModalChat() {
     var load = document.getElementById('turboLoading');
     if (load) load.remove();
 
-    var answerHtml = data.answer.replace(/\\n/g, '<br/>');
+    var answerHtml = renderTurboMarkdown(data.answer);
     body.innerHTML += '<div style="background: #1f3345; padding: 18px 22px; border-radius: 14px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.08);">' + answerHtml + '</div>';
 
     if (data.matched_programs && data.matched_programs.length > 0) {
@@ -759,21 +836,29 @@ def process_html(html: str, current_slug: str = "") -> str:
         elif href.startswith("/") and not href.startswith("//"):
             link["href"] = f"https://www.sharda.ac.in{href}"
 
-    # 2. Scripts
-    for script in soup.find_all("script", src=True):
-        src = script["src"]
-        if is_microsite and (src.startswith("assets/") or src.startswith("js/")):
-            script["src"] = f"https://www.sharda.ac.in/{subpath}/{src}"
-        elif "assets/" in src:
-            rel_path = src[src.index("assets/"):]
-            if (BASE_DIR / "frontend" / "public" / rel_path).exists():
-                script["src"] = f"/{rel_path}"
-            else:
-                script["src"] = f"https://www.sharda.ac.in/{rel_path}"
-        elif "attachments/" in src:
-            script["src"] = f"https://www.sharda.ac.in/{src[src.index('attachments/'):]}"
-        elif src.startswith("/") and not src.startswith("//"):
-            script["src"] = f"https://www.sharda.ac.in{src}"
+    # 2. Scripts & Legacy Chatbot Cleanup
+    for script in list(soup.find_all("script")):
+        src = script.get("src", "")
+        text = script.string or ""
+        if any(bad in src.lower() for bad in ["superbot", "whitebird", "sai/embed.js", "responsivevoice"]) or \
+           any(bad in text.lower() for bad in ["__sbt_widget_client", "superbot", "whitebird"]):
+            script.decompose()
+            continue
+
+        if script.get("src"):
+            src = script["src"]
+            if is_microsite and (src.startswith("assets/") or src.startswith("js/")):
+                script["src"] = f"https://www.sharda.ac.in/{subpath}/{src}"
+            elif "assets/" in src:
+                rel_path = src[src.index("assets/"):]
+                if (BASE_DIR / "frontend" / "public" / rel_path).exists():
+                    script["src"] = f"/{rel_path}"
+                else:
+                    script["src"] = f"https://www.sharda.ac.in/{rel_path}"
+            elif "attachments/" in src:
+                script["src"] = f"https://www.sharda.ac.in/{src[src.index('attachments/'):]}"
+            elif src.startswith("/") and not src.startswith("//"):
+                script["src"] = f"https://www.sharda.ac.in{src}"
 
     # 3. Images & Lazy Images Normalization
     for img in soup.find_all("img"):
@@ -831,15 +916,16 @@ def process_html(html: str, current_slug: str = "") -> str:
 
     output_html = str(soup)
 
-    # Clean legacy Whitebird branding and replace with Turbo Bytes Consulting
-    output_html = re.sub(r'Powered by.*?Whitebird', 'Powered by <span style="color:#EAA914;font-weight:700;">⚡ Turbo Bytes Consulting</span>', output_html, flags=re.IGNORECASE)
+    # Clean legacy Whitebird branding and replace with Turbo Bytes Consulting (TBC)
+    output_html = re.sub(r'Powered by.*?Whitebird', 'Powered by <span style="color:#EAA914;font-weight:700;">⚡ Turbo Bytes Consulting (TBC)</span>', output_html, flags=re.IGNORECASE)
     output_html = re.sub(r'Whitebird', 'Turbo Bytes Consulting', output_html, flags=re.IGNORECASE)
 
-    # Inject Sharda AI Brain & CSS
-    if "</body>" in output_html:
-        output_html = output_html.replace("</body>", f"{AI_WIDGET_INJECTION}\n</body>")
-    else:
-        output_html += AI_WIDGET_INJECTION
+    # Inject Sharda AI Brain & CSS (only once)
+    if "turboModal" not in output_html and "turboFloatBar" not in output_html:
+        if "</body>" in output_html:
+            output_html = output_html.replace("</body>", f"{AI_WIDGET_INJECTION}\n</body>")
+        else:
+            output_html += AI_WIDGET_INJECTION
 
     return output_html
 
