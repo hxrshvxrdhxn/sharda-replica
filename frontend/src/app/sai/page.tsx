@@ -186,7 +186,7 @@ export default function SAIPage() {
             <div className="h-5 w-[1px] bg-slate-700/60 hidden sm:block" />
             <div className="hidden sm:flex items-center gap-1.5 bg-amber-400/10 border border-amber-400/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold text-amber-300">
               <Sparkles className="w-3 h-3 text-amber-400" />
-              <span>Gemini 3.6 Flash</span>
+              <span>Google Gemini Flash</span>
             </div>
           </div>
         </div>
@@ -352,7 +352,7 @@ export default function SAIPage() {
                     <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                   <span className="text-xs text-amber-300 font-semibold">
-                    Consulting Sharda Knowledge Base & Gemini 3.6 Flash...
+                    Consulting Sharda Knowledge Base & Google Gemini Flash...
                   </span>
                 </div>
               </div>
@@ -417,7 +417,7 @@ export default function SAIPage() {
 
           <div className="text-center mt-2">
             <p className="text-[11px] text-slate-500 font-medium">
-              Powered by <span className="text-slate-400 font-semibold">⚡ Turbo Bytes Consulting (TBC)</span> &amp; Google Gemini 3.6 Flash
+              Powered by <span className="text-slate-400 font-semibold">⚡ Turbo Bytes Consulting (TBC)</span> &amp; Google Gemini Flash
             </p>
           </div>
         </div>

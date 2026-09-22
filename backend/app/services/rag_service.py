@@ -293,85 +293,93 @@ class TurboBytesShardaBrainService:
         context_text = "\n\n---\n\n".join([f"[{c.get('title')}]:\n{c.get('content')}" for c in relevant_chunks])
 
         system_instruction = (
-            "You are 'Sharda AI (SAI)', the modern conversational admissions counselor and intelligence engine for Sharda University (NAAC A+ Accredited, Greater Noida, Delhi-NCR), engineered by Turbo Bytes Consulting (TBC).\n\n"
-            "RESPONSE FORMAT & STYLE RULES (STRICT & CRITICAL):\n"
-            "1. BE SHORT, CRISP & TO THE POINT: Answer the user's core question directly in the very first 1-2 sentences. Avoid long conversational preamble, repetitive filler, or disclaimers.\n"
-            "2. STRUCTURE WITH CLEAN BULLETS: Use concise bullet points for key data (e.g., Dates, Eligibility, Fees, Placement Package, Scholarships).\n"
-            "3. USE MINI TABLES ONLY WHEN NECESSARY: When comparing multiple courses or fee slabs, render a compact, clean markdown table.\n"
-            "4. ALWAYS INCLUDE CLICKABLE SOURCE PAGE LINKS WITH LINK ICONS: At the end of every response, provide 1 to 3 direct clickable markdown links to relevant university pages in this format:\n"
-            "   - 🔗 [Explore B.Tech CSE Details & Curriculum](/programmes/b-tech-cse)\n"
-            "   - 🔗 [Admissions 2026 Process & Application Form](/admissions)\n"
-            "   - 🔗 [SUAT 2026 Entrance Test & Slot Booking](/suat)\n"
-            "   - 🔗 [Scholarship Slabs & Eligibility Calculator](/scholarships)\n"
-            "   - 🔗 [Campus Hostels & Accommodation Charges](/hostel)\n"
-            "   - 🔗 [MBA Specialisations & Placements](/programmes/mba)\n"
-            "   - 🔗 [Medical & Allied Health Programs](/schools/medical-sciences-and-research)\n"
-            "5. GREETINGS: For 'hi', 'hello', 'hey', respond with a warm, snappy 2-sentence greeting and 4 quick clickable suggested paths.\n"
-            "6. ACCURACY: Ground all numbers (fees, dates, packages) strictly in Sharda University verified records. Sharda offers up to 100% merit scholarships, ₹1.00 Cr highest international package, and ₹45 LPA highest domestic package."
+            "You are 'Sharda AI (SAI)', the official intelligence counselor for Sharda University (NAAC A+ Accredited, Greater Noida, Delhi-NCR), engineered by Turbo Bytes Consulting (TBC).\n\n"
+            "STRICT RULES (CRITICAL):\n"
+            "1. BE EXTREMELY SHORT, CRISP & DIRECT: Maximum 3 to 4 concise bullet points or 3-4 short sentences total. Zero conversational fluff, zero filler ('Sure', 'Here is the info', 'Welcome'). Answer immediately.\n"
+            "2. BOLD KEY DATA: Highlight dates, eligibility %, annual fees, highest packages (₹1.00 Cr International, ₹45 LPA Domestic), and scholarship tiers (up to 100%).\n"
+            "3. USE MINI TABLES ONLY IF COMPARING MULTIPLE PROGRAMS: Keep tables compact (3-4 columns max).\n"
+            "4. ALWAYS END WITH 2-3 CLICKABLE LINK PILLS: Each on a new line in this exact format:\n"
+            "   🔗 [Explore B.Tech CSE Details](/programmes/b-tech-cse)\n"
+            "   🔗 [Admissions 2026 Process](/admissions)\n"
+            "   🔗 [Scholarship Slabs & Calculator](/scholarships)\n"
+            "   🔗 [Book SUAT 2026 Slot](/suat)\n"
+            "   🔗 [Hostel Fees & Booking](/hostel)\n"
+            "   🔗 [Explore MBA Programs](/programmes/mba)\n"
+            "   🔗 [Medical Sciences & Research](/schools/medical-sciences-and-research)\n"
+            "   🔗 [All Academic Programmes](/programmes)"
         )
 
         prompt = f"User Query: {query}\n\nVerified University Knowledge Context:\n{context_text}"
 
+        candidate_models = ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.5-flash", "gemini-flash-latest"]
+        # Remove duplicates preserving order
+        seen_models = set()
+        model_queue = [m for m in candidate_models if m and not (m in seen_models or seen_models.add(m))]
+
         if settings.GEMINI_API_KEY:
-            try:
-                gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{settings.GEMINI_MODEL}:generateContent?key={settings.GEMINI_API_KEY}"
-                
-                # Build conversation contents if history provided
-                contents = []
-                if conversation_history:
-                    for msg in conversation_history[-4:]:
-                        role = "user" if msg.get("role") == "user" else "model"
-                        contents.append({"role": role, "parts": [{"text": msg.get("content", "")}]})
-                
-                contents.append({
-                    "role": "user",
-                    "parts": [{"text": f"{system_instruction}\n\n{prompt}"}]
-                })
+            for model_name in model_queue:
+                try:
+                    gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={settings.GEMINI_API_KEY}"
+                    
+                    # Build conversation contents
+                    contents = []
+                    if conversation_history:
+                        for msg in conversation_history[-4:]:
+                            role = "user" if msg.get("role") == "user" else "model"
+                            contents.append({"role": role, "parts": [{"text": msg.get("content", "")}]})
+                    
+                    contents.append({
+                        "role": "user",
+                        "parts": [{"text": prompt}]
+                    })
 
-                payload = {
-                    "contents": contents,
-                    "generationConfig": {
-                        "temperature": 0.25,
-                        "maxOutputTokens": 1024
-                    }
-                }
-                async with httpx.AsyncClient(timeout=20.0) as client:
-                    res = await client.post(gemini_url, json=payload)
-                    if res.status_code == 200:
-                        data = res.json()
-                        ai_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                        
-                        # Ensure clickable links are present
-                        if not re.search(r'\[.*?\]\(.*?\)', ai_text):
-                            links_to_add = []
-                            if matched_programs:
-                                for p in matched_programs[:2]:
-                                    links_to_add.append(f"🔗 [{p.get('title')} Details & Fees]({p.get('url')})")
-                            elif any(w in query.lower() for w in ["admission", "apply", "deadline", "close", "last date", "when"]):
-                                links_to_add.append("🔗 [Admissions 2026 Process & Application Form](/admissions)")
-                                links_to_add.append("🔗 [Book SUAT 2026 Slot](/suat)")
-                            elif "scholarship" in query.lower():
-                                links_to_add.append("🔗 [Calculate Scholarship Slabs](/scholarships)")
-                            elif "hostel" in query.lower():
-                                links_to_add.append("🔗 [Campus Hostels & Accommodation](/hostel)")
-                            else:
-                                links_to_add.append("🔗 [Explore Academic Programmes](/programmes)")
-                                links_to_add.append("🔗 [Admissions 2026 Portal](/admissions)")
-                            
-                            ai_text += "\n\n" + "\n".join(links_to_add)
-
-                        return {
-                            "response": ai_text,
-                            "sources": [c.get("title") for c in relevant_chunks],
-                            "matched_programs": matched_programs,
-                            "lead_capture_recommended": self.should_trigger_lead_capture(query),
-                            "model": f"{settings.GEMINI_MODEL} (Turbo Bytes Consulting)",
-                            "powered_by": "Turbo Bytes Consulting (TBC)"
+                    payload = {
+                        "system_instruction": {
+                            "parts": [{"text": system_instruction}]
+                        },
+                        "contents": contents,
+                        "generationConfig": {
+                            "temperature": 0.1,
+                            "maxOutputTokens": 300
                         }
-                    else:
-                        logger.error(f"Gemini API returned status {res.status_code}: {res.text}")
-            except Exception as e:
-                logger.error(f"Gemini API call failed: {e}. Falling back to deterministic knowledge responder.")
+                    }
+                    async with httpx.AsyncClient(timeout=10.0) as client:
+                        res = await client.post(gemini_url, json=payload)
+                        if res.status_code == 200:
+                            data = res.json()
+                            ai_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                            
+                            # Ensure clickable links are present
+                            if not re.search(r'\[.*?\]\(.*?\)', ai_text):
+                                links_to_add = []
+                                if matched_programs:
+                                    for p in matched_programs[:2]:
+                                        links_to_add.append(f"🔗 [{p.get('title')} Details & Fees]({p.get('url')})")
+                                elif any(w in query.lower() for w in ["admission", "apply", "deadline", "close", "last date", "when"]):
+                                    links_to_add.append("🔗 [Admissions 2026 Process & Application Form](/admissions)")
+                                    links_to_add.append("🔗 [Book SUAT 2026 Slot](/suat)")
+                                elif "scholarship" in query.lower():
+                                    links_to_add.append("🔗 [Calculate Scholarship Slabs](/scholarships)")
+                                elif "hostel" in query.lower():
+                                    links_to_add.append("🔗 [Campus Hostels & Accommodation](/hostel)")
+                                else:
+                                    links_to_add.append("🔗 [Explore Academic Programmes](/programmes)")
+                                    links_to_add.append("🔗 [Admissions 2026 Portal](/admissions)")
+                                
+                                ai_text += "\n\n" + "\n".join(links_to_add)
+
+                            return {
+                                "response": ai_text,
+                                "sources": [c.get("title") for c in relevant_chunks],
+                                "matched_programs": matched_programs,
+                                "lead_capture_recommended": self.should_trigger_lead_capture(query),
+                                "model": f"{model_name} (Turbo Bytes Consulting)",
+                                "powered_by": "Turbo Bytes Consulting (TBC)"
+                            }
+                        else:
+                            logger.warning(f"Model {model_name} returned status {res.status_code}: {res.text[:100]}")
+                except Exception as e:
+                    logger.warning(f"Model {model_name} failed: {e}. Trying next model...")
 
         fallback_answer = self.generate_grounded_answer(query, relevant_chunks)
         return {

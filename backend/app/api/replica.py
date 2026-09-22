@@ -278,22 +278,6 @@ body:not(.home) #breadcrumbs .divider {
   color: #94a3b8;
 }
 
-.turbo-send-plane-btn {
-  background: none;
-  border: none;
-  color: #94a3b8;
-  padding: 6px 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s;
-  outline: none;
-}
-.turbo-send-plane-btn:hover {
-  color: #EAA914;
-}
-
 .turbo-ai-action-btn {
   background: linear-gradient(135deg, #e58e26 0%, #EAA914 50%, #d6950b 100%);
   color: #ffffff;
@@ -307,6 +291,9 @@ body:not(.home) #breadcrumbs .divider {
   letter-spacing: 0.3px;
   box-shadow: 0 4px 15px rgba(229, 142, 38, 0.4);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .turbo-ai-action-btn:hover {
   transform: scale(1.04);
@@ -393,7 +380,7 @@ body:not(.home) #breadcrumbs .divider {
   background: rgba(20, 32, 45, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(234, 169, 20, 0.6);
+  border: 1.5px solid rgba(234, 169, 20, 0.6);
   border-radius: 50px;
   padding: 6px 10px 6px 16px;
   display: flex;
@@ -406,35 +393,36 @@ body.home .turbo-ai-floating-bar {
   display: none !important;
 }
 
-
-/* Rich Modal */
+/* Conversational Modern AI Modal */
 .turbo-ai-modal {
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(12px);
+  background: rgba(10, 15, 22, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: 1000000;
   align-items: center;
   justify-content: center;
   font-family: 'Open Sans', -apple-system, sans-serif;
 }
 .turbo-ai-modal-content {
-  background: #162430;
-  width: 92%;
-  max-width: 720px;
-  height: 620px;
-  border-radius: 20px;
-  border: 1px solid rgba(234, 169, 20, 0.5);
+  background: #111e29;
+  width: 94%;
+  max-width: 780px;
+  height: 680px;
+  max-height: 90vh;
+  border-radius: 24px;
+  border: 1.5px solid rgba(234, 169, 20, 0.45);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.75);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.85), 0 0 35px rgba(234,169,20,0.18);
 }
 .turbo-ai-modal-header {
-  padding: 16px 22px;
-  background: #0f1922;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 20px;
+  background: #0d1720;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -442,32 +430,127 @@ body.home .turbo-ai-floating-bar {
 }
 .turbo-ai-modal-body {
   flex: 1;
-  padding: 22px;
+  padding: 20px;
   overflow-y: auto;
-  color: #f8fafc;
+  color: #f1f5f9;
+  font-size: 14px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Chat bubble styling */
+.turbo-user-msg-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+.turbo-user-msg-bubble {
+  background: linear-gradient(135deg, #e58e26 0%, #EAA914 100%);
+  color: #0f172a;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  font-size: 13.5px;
+  box-shadow: 0 4px 14px rgba(229, 142, 38, 0.3);
+  word-break: break-word;
+}
+
+.turbo-ai-msg-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.turbo-ai-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e58e26, #EAA914);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(234, 169, 20, 0.35);
+}
+.turbo-ai-msg-bubble {
+  background: #172635;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px 18px 18px 18px;
+  padding: 16px 20px;
+  flex: 1;
+  color: #e2e8f0;
   font-size: 13.5px;
   line-height: 1.65;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  position: relative;
 }
-.turbo-ai-modal-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 14px 0;
-  font-size: 12.5px;
+.turbo-ai-msg-bubble strong {
+  color: #ffffff;
+  font-weight: 700;
 }
-.turbo-ai-modal-body th, .turbo-ai-modal-body td {
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 8px 12px;
-  text-align: left;
+.turbo-ai-msg-bubble li {
+  margin-left: 18px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
 }
-.turbo-ai-modal-body th {
-  background: rgba(234, 169, 20, 0.2);
-  color: #EAA914;
+
+.turbo-ai-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(234, 169, 20, 0.14);
+  border: 1px solid rgba(234, 169, 20, 0.5);
+  color: #fef08a !important;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none !important;
+  margin: 4px 6px 4px 0;
+  transition: all 0.2s ease;
 }
-.turbo-ai-modal-footer {
-  padding: 14px 22px;
-  background: #0f1922;
-  border-top: 1px solid rgba(255,255,255,0.1);
+.turbo-ai-link-pill:hover {
+  background: rgba(234, 169, 20, 0.3);
+  border-color: #EAA914;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.turbo-chat-chips-wrap {
   display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.turbo-chat-chip-btn {
+  background: #0f1922;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.turbo-chat-chip-btn:hover {
+  border-color: #EAA914;
+  color: #EAA914;
+  background: #162430;
+}
+
+.turbo-ai-modal-footer {
+  padding: 12px 18px;
+  background: #0d1720;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 .turbo-powered-chip {
@@ -477,7 +560,6 @@ body.home .turbo-ai-floating-bar {
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
-  margin-left: 8px;
 }
 </style>
 
@@ -485,10 +567,7 @@ body.home .turbo-ai-floating-bar {
 <div class="turbo-ai-floating-bar" id="turboFloatBar">
   <span class="turbo-sparkle-icon">✨</span>
   <input type="text" id="turboFloatInput" class="turbo-ai-main-input" placeholder="Ask Sharda AI (e.g. B.Tech CSE vs MBA fees, scholarships, SUAT 2026)..." oninput="handleTurboSuggest(this.value, 'float')" onkeydown="if(event.key==='Enter'){event.preventDefault(); triggerTurboSearch(this.value);}" autocomplete="off" />
-  <button class="turbo-send-plane-btn" onclick="triggerTurboSearch(document.getElementById('turboFloatInput').value)">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="#EAA914"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-  </button>
-  <button class="turbo-ai-action-btn" onclick="triggerTurboSearch(document.getElementById('turboFloatInput').value)">Ask Sharda AI</button>
+  <button class="turbo-ai-action-btn" type="button" id="turboFloatSearchBtn" onclick="triggerTurboSearch(document.getElementById('turboFloatInput').value)">Ask Sharda AI</button>
   <div class="turbo-suggest-box" id="turboFloatSuggest" style="display:none; bottom:calc(100% + 10px); top:auto;"></div>
 </div>
 
@@ -496,22 +575,35 @@ body.home .turbo-ai-floating-bar {
 <div class="turbo-ai-modal" id="turboModal">
   <div class="turbo-ai-modal-content">
     <div class="turbo-ai-modal-header">
-      <div style="display: flex; align-items: center;">
-        <span style="font-size: 22px; margin-right: 8px;">🎓</span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px;">🎓</span>
         <div>
-          <strong style="font-size: 15px;">Sharda AI Knowledge Brain</strong>
-          <span class="turbo-powered-chip">⚡ Powered by Turbo Bytes Consulting (TBC)</span>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <strong style="font-size: 15px; color: #fff;">Sharda AI Admissions Brain</strong>
+            <span class="turbo-powered-chip">⚡ Turbo Bytes (TBC)</span>
+          </div>
+          <span style="font-size: 11px; color: #94a3b8;">Direct grounded answers on 130+ programs &amp; admissions</span>
         </div>
       </div>
-      <button onclick="closeTurboModal()" style="background: none; border: none; color: #cbd5e1; font-size: 26px; cursor: pointer; line-height: 1;">&times;</button>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button onclick="resetTurboChat()" style="background: rgba(255,255,255,0.06); border: 1px solid #334155; color: #cbd5e1; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 8px; cursor: pointer;">↺ New Chat</button>
+        <button onclick="closeTurboModal()" style="background: none; border: none; color: #cbd5e1; font-size: 24px; cursor: pointer; line-height: 1; padding: 0 4px;">&times;</button>
+      </div>
     </div>
     <div class="turbo-ai-modal-body" id="turboChatBody">
-      <div style="background: #1f3345; padding: 14px 18px; border-radius: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);">
-        Hello! I am <strong>Sharda AI</strong>, powered by <strong>Turbo Bytes Consulting (TBC)</strong> and Google Gemini. I have indexed all 2,388 pages across Sharda University (NAAC A+ Accredited). Ask me about programs, fee structures, SUAT 2026 entrance exam, up to 100% scholarships, hostels, or placement track records.
+      <div style="background: #172635; padding: 18px 20px; border-radius: 16px; margin-bottom: 16px; border: 1px solid rgba(234, 169, 20, 0.2);">
+        <h4 style="margin: 0 0 6px 0; color: #EAA914; font-size: 14.5px;">👋 Welcome to Sharda AI Counselor</h4>
+        <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; line-height: 1.5;">I am indexed with all 2,388 pages across Sharda University (NAAC A+). Ask me about programs, fee structures, SUAT 2026 entrance exam, up to 100% scholarships, hostels, or placement track records.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button class="turbo-chat-chip-btn" onclick="sendTurboModalChat('When do B.Tech CSE 2026 admissions close?')">When do B.Tech CSE admissions close?</button>
+          <button class="turbo-chat-chip-btn" onclick="sendTurboModalChat('What is the fee and eligibility for MBA?')">MBA Fees &amp; Eligibility</button>
+          <button class="turbo-chat-chip-btn" onclick="sendTurboModalChat('How to get up to 100% scholarship?')">Up to 100% Scholarships</button>
+          <button class="turbo-chat-chip-btn" onclick="sendTurboModalChat('What are the hostel facilities and charges?')">Campus Hostels &amp; Mess</button>
+        </div>
       </div>
     </div>
     <div class="turbo-ai-modal-footer">
-      <input type="text" id="turboModalInput" class="turbo-ai-main-input" style="background: #162430; border: 1px solid #334155; border-radius: 10px; padding: 10px 14px;" placeholder="Ask follow-up question or explore more courses..." onkeydown="if(event.key==='Enter'){event.preventDefault(); sendTurboModalChat();}" />
+      <input type="text" id="turboModalInput" class="turbo-ai-main-input" style="background: #172635; border: 1px solid #334155; border-radius: 12px; padding: 11px 16px;" placeholder="Ask follow-up question (e.g. Is hostel compulsory? What is the SUAT cutoff?)..." onkeydown="if(event.key==='Enter'){event.preventDefault(); sendTurboModalChat();}" />
       <button class="turbo-ai-action-btn" onclick="sendTurboModalChat()">Send</button>
     </div>
   </div>
@@ -794,12 +886,39 @@ async function handleBrochureSubmit(e) {
   document.getElementById('bmSuccess').style.display = 'block';
 }
 
+var turboChatHistory = [];
+
+function resetTurboChat() {
+  turboChatHistory = [];
+  var body = document.getElementById('turboChatBody');
+  if (body) {
+    body.innerHTML = '<div style="background: #172635; padding: 18px 20px; border-radius: 16px; margin-bottom: 16px; border: 1px solid rgba(234, 169, 20, 0.2);">' +
+      '<h4 style="margin: 0 0 6px 0; color: #EAA914; font-size: 14.5px;">👋 Welcome to Sharda AI Counselor</h4>' +
+      '<p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 13px; line-height: 1.5;">I am indexed with all 2,388 pages across Sharda University (NAAC A+). Ask me about programs, fee structures, SUAT 2026 entrance exam, up to 100% scholarships, hostels, or placement track records.</p>' +
+      '<div style="display: flex; flex-wrap: wrap; gap: 8px;">' +
+        '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'When do B.Tech CSE 2026 admissions close?\')">When do B.Tech CSE admissions close?</button>' +
+        '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What is the fee and eligibility for MBA?\')">MBA Fees &amp; Eligibility</button>' +
+        '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'How to get up to 100% scholarship?\')">Up to 100% Scholarships</button>' +
+        '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What are the hostel facilities and charges?\')">Campus Hostels &amp; Mess</button>' +
+      '</div>' +
+    '</div>';
+  }
+  var inp = document.getElementById('turboModalInput');
+  if (inp) {
+    inp.value = '';
+    inp.focus();
+  }
+}
+
 function openTurboModal(initialQuery) {
   var modal = document.getElementById('turboModal');
   if (modal) modal.style.display = 'flex';
+  
+  var modalInp = document.getElementById('turboModalInput');
   if (initialQuery && initialQuery.trim()) {
-    document.getElementById('turboModalInput').value = initialQuery;
-    sendTurboModalChat();
+    sendTurboModalChat(initialQuery.trim());
+  } else if (modalInp) {
+    setTimeout(function() { modalInp.focus(); }, 100);
   }
 }
 
@@ -809,59 +928,151 @@ function closeTurboModal() {
 }
 
 function triggerTurboSearch(query) {
-  if (!query || !query.trim()) {
-    var inp = document.getElementById('turboSearchInput') || document.getElementById('turboFloatInput');
-    query = inp ? inp.value.trim() : '';
+  var heroInp = document.getElementById('turboSearchInput');
+  var floatInp = document.getElementById('turboFloatInput');
+  
+  if (!query || typeof query !== 'string' || !query.trim()) {
+    query = (heroInp && heroInp.value) ? heroInp.value.trim() : ((floatInp && floatInp.value) ? floatInp.value.trim() : '');
   }
+  
+  // CLEAR THE SEARCH INPUTS IMMEDIATELY
+  if (heroInp) heroInp.value = '';
+  if (floatInp) floatInp.value = '';
+  
+  // Close any auto-suggest dropdowns
+  var heroSug = document.getElementById('turboHeroSuggest');
+  var floatSug = document.getElementById('turboFloatSuggest');
+  if (heroSug) heroSug.style.display = 'none';
+  if (floatSug) floatSug.style.display = 'none';
+
   if (query === 'Scholarships & SUAT 2026') {
     openScholarshipModal();
     return;
   }
+  
   if (!query) query = "What are the top programmes at Sharda University?";
   openTurboModal(query);
 }
 
-async function sendTurboModalChat() {
+function copyTurboText(btn) {
+  var bubble = btn.closest('.turbo-ai-msg-bubble');
+  if (!bubble) return;
+  var text = bubble.innerText.replace(/Copy|✓ Copied/g, '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    var orig = btn.innerHTML;
+    btn.innerHTML = '✓ Copied';
+    btn.style.color = '#22c55e';
+    setTimeout(function() {
+      btn.innerHTML = orig;
+      btn.style.color = '#94a3b8';
+    }, 1800);
+  });
+}
+
+function escapeHtml(unsafe) {
+  return (unsafe || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+async function sendTurboModalChat(queryOverride) {
   var inp = document.getElementById('turboModalInput');
-  var q = inp.value.trim();
+  var q = (queryOverride && typeof queryOverride === 'string') ? queryOverride.trim() : (inp ? inp.value.trim() : '');
   if (!q) return;
-  inp.value = '';
+  if (inp) inp.value = '';
 
   var body = document.getElementById('turboChatBody');
-  body.innerHTML += '<div style="text-align: right; margin-bottom: 14px;"><span style="background: linear-gradient(135deg, #e58e26, #EAA914); color: #162430; font-weight: 700; padding: 10px 18px; border-radius: 14px; display: inline-block;">' + q + '</span></div>';
-  body.innerHTML += '<div id="turboLoading" style="color: #94a3b8; font-style: italic; margin-bottom: 14px;"><span style="color:#EAA914;">⚡ Turbo Bytes Brain:</span> Searching verified Sharda knowledge base...</div>';
+  if (!body) return;
+
+  // Append user bubble
+  var userRow = document.createElement('div');
+  userRow.className = 'turbo-user-msg-row';
+  userRow.innerHTML = '<div class="turbo-user-msg-bubble">' + escapeHtml(q) + '</div>';
+  body.appendChild(userRow);
+
+  // Append animated typing indicator
+  var loadRow = document.createElement('div');
+  loadRow.id = 'turboLoading';
+  loadRow.className = 'turbo-ai-msg-row';
+  loadRow.innerHTML = '<div class="turbo-ai-avatar">⚡</div>' +
+    '<div class="turbo-ai-msg-bubble" style="display:flex; align-items:center; gap:8px; padding:12px 18px; color:#94a3b8; font-style:italic;">' +
+      '<span style="display:inline-block; animation:spin 1s linear infinite;">⏳</span> Consulting verified Sharda knowledge base...' +
+    '</div>';
+  body.appendChild(loadRow);
   body.scrollTop = body.scrollHeight;
 
   try {
     var res = await fetch('/api/v1/ai/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: q })
+      body: JSON.stringify({
+        query: q,
+        history: turboChatHistory.slice(-6)
+      })
     });
     var data = await res.json();
     var load = document.getElementById('turboLoading');
     if (load) load.remove();
 
-    var answerHtml = renderTurboMarkdown(data.answer);
-    body.innerHTML += '<div style="background: #1f3345; padding: 18px 22px; border-radius: 14px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.08);">' + answerHtml + '</div>';
+    var rawAns = (data && data.answer) ? data.answer : 'Sharda University (NAAC A+) offers 130+ programs with up to 100% scholarships.';
+    var answerHtml = renderTurboMarkdown(rawAns);
 
+    // AI message container
+    var aiRow = document.createElement('div');
+    aiRow.className = 'turbo-ai-msg-row';
+    
+    var aiBubbleHtml = '<div class="turbo-ai-avatar">⚡</div>' +
+      '<div class="turbo-ai-msg-bubble">' +
+        '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">' +
+          '<span style="font-size:11px; font-weight:700; color:#EAA914; text-transform:uppercase; letter-spacing:0.5px;">Sharda AI &bull; Verified Answer</span>' +
+          '<button onclick="copyTurboText(this)" style="background:none; border:none; color:#94a3b8; font-size:11px; cursor:pointer; padding:2px 6px;">📋 Copy</button>' +
+        '</div>' +
+        '<div>' + answerHtml + '</div>';
+
+    // Matched programs cards if present
     if (data.matched_programs && data.matched_programs.length > 0) {
-      var progHtml = '<div style="margin-bottom: 16px;"><strong style="color:#EAA914; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;">Recommended Programme Portals:</strong><div style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">';
+      aiBubbleHtml += '<div style="margin-top:14px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08);">' +
+        '<div style="font-size:11px; font-weight:700; color:#EAA914; margin-bottom:6px; text-transform:uppercase;">Direct Program Portals:</div>' +
+        '<div style="display:flex; flex-direction:column; gap:6px;">';
       data.matched_programs.forEach(function(p) {
-        progHtml += '<a href="' + p.url + '" style="background:#162430; border:1px solid rgba(234,169,20,0.3); padding:10px 14px; border-radius:10px; color:#fff; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">' +
-          '<div><span style="font-weight:600; font-size:13px; color:#fff;">' + p.title + '</span><div style="font-size:11px; color:#94a3b8;">' + p.school + ' &bull; ' + p.duration + '</div></div>' +
-          '<span style="background:rgba(234,169,20,0.2); color:#EAA914; font-size:11px; font-weight:700; padding:4px 8px; border-radius:8px;">' + p.annual_fee + '</span>' +
+        aiBubbleHtml += '<a href="' + p.url + '" style="background:#111e29; border:1px solid rgba(234,169,20,0.3); padding:8px 12px; border-radius:8px; color:#fff; text-decoration:none; display:flex; justify-content:space-between; align-items:center;">' +
+          '<div><span style="font-weight:600; font-size:12.5px; color:#fff;">' + p.title + '</span><div style="font-size:11px; color:#94a3b8;">' + (p.school || 'Sharda University') + ' &bull; ' + (p.duration || 'UG/PG') + '</div></div>' +
+          '<span style="background:rgba(234,169,20,0.2); color:#EAA914; font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px;">' + p.annual_fee + '</span>' +
         '</a>';
       });
-      progHtml += '</div></div>';
-      body.innerHTML += progHtml;
+      aiBubbleHtml += '</div></div>';
     }
+
+    // Dynamic suggested follow-ups
+    aiBubbleHtml += '<div class="turbo-chat-chips-wrap">' +
+      '<span style="font-size:11px; color:#64748b; margin-right:4px; align-self:center;">Follow up:</span>' +
+      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What are the scholarship criteria for this?\')">Scholarship criteria</button>' +
+      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'How do I apply online?\')">How to apply</button>' +
+      '<button class="turbo-chat-chip-btn" onclick="sendTurboModalChat(\'What is the hostel fee?\')">Hostel fees</button>' +
+    '</div>';
+
+    aiBubbleHtml += '</div>';
+    aiRow.innerHTML = aiBubbleHtml;
+    body.appendChild(aiRow);
+
+    // Save to multi-turn conversation history
+    turboChatHistory.push({ role: "user", content: q });
+    turboChatHistory.push({ role: "assistant", content: rawAns });
+
   } catch(e) {
     var load = document.getElementById('turboLoading');
     if (load) load.remove();
-    body.innerHTML += '<div style="background: #1f3345; padding: 16px; border-radius: 12px; margin-bottom: 14px;">Sharda University (NAAC A+) offers 130+ programs across 14 Schools with up to 100% scholarships. Ask about fees, admissions, or SUAT 2026.</div>';
+    var errRow = document.createElement('div');
+    errRow.className = 'turbo-ai-msg-row';
+    errRow.innerHTML = '<div class="turbo-ai-avatar">⚡</div>' +
+      '<div class="turbo-ai-msg-bubble">' +
+        '<strong>Sharda University (NAAC A+ Accredited)</strong> offers 130+ programs across 14 Schools with up to 100% scholarships.<br><br>' +
+        '<a href="/admissions" class="turbo-ai-link-pill">Admissions 2026 Portal &rarr;</a>' +
+        '<a href="/scholarships" class="turbo-ai-link-pill">Scholarship Slabs &rarr;</a>' +
+      '</div>';
+    body.appendChild(errRow);
   }
+
   body.scrollTop = body.scrollHeight;
+  if (inp) inp.focus();
 }
 </script>
 """

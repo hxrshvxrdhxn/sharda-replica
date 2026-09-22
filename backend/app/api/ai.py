@@ -8,6 +8,7 @@ router = APIRouter(prefix="/ai", tags=["Turbo Bytes Sharda AI (SAI) Brain Engine
 class AIChatRequest(BaseModel):
     query: str = Field(..., example="What is the fee and eligibility for B.Tech Computer Science?")
     conversation_history: Optional[List[Dict[str, str]]] = Field(default_factory=list)
+    history: Optional[List[Dict[str, str]]] = None
 
 class AISearchRequest(BaseModel):
     query: str = Field(..., example="MBA scholarships")
@@ -15,7 +16,8 @@ class AISearchRequest(BaseModel):
 
 @router.post("/chat")
 async def chat_with_sharda_ai(req: AIChatRequest):
-    result = await rag_service.generate_response(req.query, req.conversation_history)
+    hist = req.history if req.history is not None else req.conversation_history
+    result = await rag_service.generate_response(req.query, hist)
     return {
         "success": True,
         "query": req.query,
@@ -24,7 +26,7 @@ async def chat_with_sharda_ai(req: AIChatRequest):
         "matched_programs": result.get("matched_programs", []),
         "lead_capture_recommended": result.get("lead_capture_recommended", False),
         "model": result.get("model", "Turbo Bytes Grounded Brain Engine"),
-        "powered_by": "Turbo Bytes Consulting"
+        "powered_by": "Turbo Bytes Consulting (TBC)"
     }
 
 @router.get("/suggest")

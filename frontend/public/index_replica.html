@@ -1656,10 +1656,7 @@ a { word-break:break-word !important;}
 <div class="turbo-ai-search-bar">
 <span class="turbo-sparkle-icon">✨</span>
 <input autocomplete="off" class="turbo-ai-main-input" id="turboSearchInput" oninput="handleTurboSuggest(this.value, 'hero')" onkeydown="if(event.key==='Enter'){event.preventDefault(); triggerTurboSearch(this.value);}" placeholder="Ask Sharda AI (e.g. B.Tech CSE vs MBA fees, scholarships, SUAT)..." type="text"/>
-<button class="turbo-send-plane-btn" onclick="triggerTurboSearch(document.getElementById('turboSearchInput').value)" title="Send">
-<svg fill="#EAA914" height="18" viewbox="0 0 24 24" width="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
-</button>
-<button class="turbo-ai-action-btn" onclick="triggerTurboSearch(document.getElementById('turboSearchInput').value)">Ask Sharda AI</button>
+<button class="turbo-ai-action-btn" type="button" id="turboHeroSearchBtn" onclick="triggerTurboSearch(document.getElementById('turboSearchInput').value)">Ask Sharda AI</button>
 <div class="turbo-suggest-box" id="turboHeroSuggest" style="display:none;"></div>
 </div>
 <!-- Attribution -->
