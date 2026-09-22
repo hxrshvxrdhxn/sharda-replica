@@ -37,6 +37,16 @@ AI_WIDGET_INJECTION = r"""
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'simple-line-icons';
+  src: url('/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'),
+       url('/assets/fonts/Simple-Line-Icons.woff?v=2.4.0') format('woff'),
+       url('/assets/fonts/Simple-Line-Icons.ttf?v=2.4.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Layout & Header 1:1 Pixel Parity Styles */
 #strip {
   position: fixed !important;
@@ -55,6 +65,84 @@ header#header {
   right: 0 !important;
   z-index: 2001 !important;
   height: 60px !important;
+}
+
+body:not(.home) {
+  padding-top: 95px !important;
+}
+
+/* Breadcrumbs 1:1 Parity */
+#breadcrumbs {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 100 !important;
+  padding-top: 25px !important;
+  margin-bottom: 25px !important;
+  position: relative !important;
+}
+#breadcrumbs .container {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+#breadcrumbs a, 
+#breadcrumbs span, 
+#breadcrumbs .divider {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 14px !important;
+  font-family: Montserrat, Arial, Helvetica, sans-serif !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+#breadcrumbs a:hover {
+  color: #EAA914 !important;
+}
+#breadcrumbs .icons,
+#breadcrumbs i[class*="icon-"] {
+  font-family: 'simple-line-icons' !important;
+  font-style: normal !important;
+  font-size: 11px !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+}
+/* White breadcrumbs inside banners */
+#secondary-banner #breadcrumbs a,
+#secondary-banner #breadcrumbs span,
+#secondary-banner #breadcrumbs i,
+#secondary-banner #breadcrumbs .divider,
+.admission-banner #breadcrumbs a,
+.admission-banner #breadcrumbs span,
+.admission-banner #breadcrumbs i,
+.admission-banner #breadcrumbs .divider,
+.triangle-banner #breadcrumbs a,
+.triangle-banner #breadcrumbs span,
+.triangle-banner #breadcrumbs i,
+.triangle-banner #breadcrumbs .divider,
+.about-banner #breadcrumbs a,
+.about-banner #breadcrumbs span,
+.about-banner #breadcrumbs i,
+.about-banner #breadcrumbs .divider,
+.campus-banner #breadcrumbs a,
+.campus-banner #breadcrumbs span,
+.campus-banner #breadcrumbs i,
+.campus-banner #breadcrumbs .divider,
+.school-bannertop #breadcrumbs a,
+.school-bannertop #breadcrumbs span,
+.school-bannertop #breadcrumbs i,
+.school-bannertop #breadcrumbs .divider {
+  color: #ffffff !important;
+}
+/* Dark breadcrumbs on standard white background pages */
+body:not(.home) #breadcrumbs a,
+body:not(.home) #breadcrumbs span,
+body:not(.home) #breadcrumbs i,
+body:not(.home) #breadcrumbs .divider {
+  color: #424242;
 }
 
 .logo img {
@@ -913,6 +1001,44 @@ def process_html(html: str, current_slug: str = "") -> str:
     # 5. Fix logo display style
     for logo in soup.find_all("img", class_="fixed-header-logo"):
         logo["style"] = "display:none;"
+
+    # 6. Breadcrumbs Integrity & Injection for Inner Pages
+    if current_slug and current_slug not in ["", "index", "home"]:
+        bc = soup.find(id="breadcrumbs") or soup.find(class_=re.compile(r"breadcrumb", re.I))
+        if not bc:
+            parts = [p for p in current_slug.strip("/").split("/") if p]
+            if parts:
+                crumbs = ['<a href="/"><i class="icon-home icons"></i></a>']
+                accum_path = ""
+                acronyms = {"Iqac": "IQAC", "Dsw": "DSW", "Ccdc": "CCDC", "Iic": "IIC", "Nirf": "NIRF", "Naac": "NAAC", "Btech": "B.Tech", "Mba": "MBA", "Bba": "BBA", "Bca": "BCA", "Mca": "MCA", "Phd": "Ph.D", "Suat": "SUAT", "Cse": "CSE"}
+                for i, part in enumerate(parts):
+                    accum_path += f"/{part}"
+                    name = part.replace("-", " ").replace("_", " ").title()
+                    for k, v in acronyms.items():
+                        name = re.sub(rf"\b{k}\b", v, name, flags=re.IGNORECASE)
+                    is_last = (i == len(parts) - 1)
+                    crumbs.append('<span class="divider"><i class="icon-arrow-right icons"></i></span>')
+                    if is_last:
+                        page_title = soup.title.string if soup.title else name
+                        if " - " in page_title:
+                            page_title = page_title.split(" - ")[0].strip()
+                        if len(page_title) > 40:
+                            page_title = name
+                        crumbs.append(f'<a>{page_title}</a>')
+                    else:
+                        crumbs.append(f'<a href="{accum_path}">{name}</a>')
+                
+                bc_html = f'<div id="breadcrumbs"><div class="container">\n{"".join(crumbs)}\n</div></div>'
+                bc_soup = BeautifulSoup(bc_html, "html.parser").find("div", id="breadcrumbs")
+                
+                banner_container = soup.find(class_=re.compile(r"(triangle-banner|admission-banner|about-banner|school-bannertop|campus-banner)", re.I))
+                if banner_container:
+                    target_container = banner_container.find("div", class_="container") or banner_container
+                    target_container.insert(0, bc_soup)
+                else:
+                    main_content = soup.find(id="main-wrapper") or soup.find("main") or soup.find("body")
+                    if main_content:
+                        main_content.insert(0, bc_soup)
 
     output_html = str(soup)
 
