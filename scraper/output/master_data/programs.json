@@ -1,0 +1,356 @@
+[
+  {
+    "id": "btech-cse",
+    "name": "B.Tech in Computer Science & Engineering",
+    "school": "School of Engineering and Technology (SET)",
+    "school_id": "set",
+    "degree": "Undergraduate (B.Tech)",
+    "duration": "4 Years (8 Semesters)",
+    "slug": "b-tech-cse",
+    "specializations": [
+      "Artificial Intelligence & Machine Learning",
+      "Cloud Computing & Virtualization",
+      "Cyber Security & Forensics",
+      "Data Science & Big Data",
+      "Full Stack Development",
+      "Internet of Things (IoT)"
+    ],
+    "annual_fee": 220000,
+    "semester_fee": 110000,
+    "eligibility": "Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with Chemistry/CS/IT with min 60% aggregate marks. Valid SUAT / JEE Main rank.",
+    "curriculum_highlights": [
+      "Data Structures & Algorithms",
+      "Operating Systems & Distributed Systems",
+      "Machine Learning & Deep Learning",
+      "Cloud Architecture (AWS/Azure)",
+      "DevOps & Microservices",
+      "Capstone Industry Project"
+    ],
+    "career_outcomes": [
+      "Software Development Engineer",
+      "AI/ML Engineer",
+      "Cloud Architect",
+      "Full Stack Developer",
+      "Data Scientist",
+      "Cyber Security Analyst"
+    ],
+    "top_recruiters": [
+      "Microsoft",
+      "Amazon",
+      "Wipro",
+      "Cognizant",
+      "TCS",
+      "Accenture",
+      "Infosys",
+      "Capgemini"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "btech-cse-aiml",
+    "name": "B.Tech in CSE (Artificial Intelligence and Machine Learning)",
+    "school": "School of Engineering and Technology (SET)",
+    "school_id": "set",
+    "degree": "Undergraduate (B.Tech)",
+    "duration": "4 Years (8 Semesters)",
+    "slug": "b-tech-cse-ai-ml",
+    "specializations": [
+      "Deep Learning",
+      "Natural Language Processing",
+      "Computer Vision",
+      "Reinforcement Learning",
+      "Generative AI & LLMs"
+    ],
+    "annual_fee": 235000,
+    "semester_fee": 117500,
+    "eligibility": "Passed 10+2 with Physics and Mathematics as compulsory subjects with minimum 60% aggregate marks. SUAT / JEE Main qualified.",
+    "curriculum_highlights": [
+      "Neural Networks & Deep Learning",
+      "Natural Language Processing (NLP)",
+      "Reinforcement Learning",
+      "Computer Vision",
+      "Generative AI Systems",
+      "Applied Robotics"
+    ],
+    "career_outcomes": [
+      "AI Research Engineer",
+      "MLOps Engineer",
+      "Data Scientist",
+      "Computer Vision Specialist",
+      "NLP Engineer"
+    ],
+    "top_recruiters": [
+      "Google",
+      "NVIDIA",
+      "Amazon Web Services",
+      "Microsoft",
+      "Intel",
+      "Adobe"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "mba-dual",
+    "name": "Master of Business Administration (MBA - Dual Specialization)",
+    "school": "School of Business Studies (SBS)",
+    "school_id": "sbs",
+    "degree": "Postgraduate (MBA)",
+    "duration": "2 Years (4 Semesters)",
+    "slug": "mba",
+    "specializations": [
+      "Marketing & Digital Marketing",
+      "Finance & Banking",
+      "Human Resource Management",
+      "Business Analytics",
+      "International Business",
+      "Supply Chain & Logistics"
+    ],
+    "annual_fee": 385000,
+    "semester_fee": 192500,
+    "eligibility": "Bachelor's Degree in any discipline with min 50% marks. Valid score in SUAT / CAT (65 percentile) / MAT (75 percentile) / XAT / GMAT followed by Group Discussion & Personal Interview.",
+    "curriculum_highlights": [
+      "Strategic Management",
+      "Financial Analytics",
+      "Global Supply Chain",
+      "Digital Marketing Analytics",
+      "Corporate Valuation",
+      "Leadership & Negotiation Labs"
+    ],
+    "career_outcomes": [
+      "Management Consultant",
+      "Investment Banker",
+      "Marketing Director",
+      "Operations Head",
+      "HR Business Partner",
+      "Product Manager"
+    ],
+    "top_recruiters": [
+      "Deloitte",
+      "KPMG",
+      "EY",
+      "PwC",
+      "HDFC Bank",
+      "ICICI Bank",
+      "Amazon",
+      "Flipkart"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "bba-hons",
+    "name": "Bachelor of Business Administration (BBA - Hons / Research)",
+    "school": "School of Business Studies (SBS)",
+    "school_id": "sbs",
+    "degree": "Undergraduate (BBA)",
+    "duration": "3 / 4 Years (NEP Aligned)",
+    "slug": "bba",
+    "specializations": [
+      "Finance & Accounting",
+      "Marketing & E-Commerce",
+      "Human Resources",
+      "Entrepreneurship & Family Business",
+      "International Business"
+    ],
+    "annual_fee": 185000,
+    "semester_fee": 92500,
+    "eligibility": "Passed 10+2 in any stream (Commerce/Science/Arts) with min 50% aggregate marks. Qualified in SUAT / CUET.",
+    "curriculum_highlights": [
+      "Business Economics",
+      "Marketing Principles",
+      "Financial Accounting",
+      "Corporate Law",
+      "Business Analytics",
+      "Startup Incubation Lab"
+    ],
+    "career_outcomes": [
+      "Business Analyst",
+      "Marketing Executive",
+      "Financial Planner",
+      "Operations Associate",
+      "Entrepreneur"
+    ],
+    "top_recruiters": [
+      "Genpact",
+      "Tech Mahindra",
+      "Tommy Hilfiger",
+      "Wipro",
+      "Indiabulls",
+      "Axis Bank"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "mbbs",
+    "name": "Bachelor of Medicine & Bachelor of Surgery (MBBS)",
+    "school": "School of Medical Sciences & Research (SMS&R)",
+    "school_id": "smsr",
+    "degree": "Undergraduate Medical (MBBS)",
+    "duration": "4.5 Years + 1 Year Compulsory Rotatory Internship",
+    "slug": "mbbs",
+    "specializations": [
+      "Clinical Medicine",
+      "General Surgery",
+      "Obstetrics & Gynaecology",
+      "Pediatrics",
+      "Orthopaedics",
+      "Community Medicine"
+    ],
+    "annual_fee": 1269000,
+    "semester_fee": 634500,
+    "eligibility": "Passed 10+2 with Physics, Chemistry, Biology/Biotechnology and English with min 50% marks (40% for SC/ST). Must qualify NEET-UG and register via UP DGME Counseling.",
+    "curriculum_highlights": [
+      "Human Anatomy & Embryology",
+      "Medical Biochemistry",
+      "Physiology",
+      "Pharmacology",
+      "Pathology & Microbiology",
+      "Forensic Medicine",
+      "1200+ Bed Hospital Clinical Postings"
+    ],
+    "career_outcomes": [
+      "Medical Officer",
+      "Clinical Specialist",
+      "Resident Surgeon",
+      "Healthcare Administrator",
+      "Medical Researcher"
+    ],
+    "top_recruiters": [
+      "Sharda Hospital",
+      "Max Healthcare",
+      "Fortis Hospitals",
+      "Apollo Hospitals",
+      "Medanta",
+      "AIIMS"
+    ],
+    "scholarships_available": false
+  },
+  {
+    "id": "b-des",
+    "name": "Bachelor of Design (B.Des)",
+    "school": "School of Design, Architecture & Planning (SAP)",
+    "school_id": "sod",
+    "degree": "Undergraduate (B.Des)",
+    "duration": "4 Years (8 Semesters)",
+    "slug": "b-des",
+    "specializations": [
+      "User Experience & Interaction Design (UI/UX)",
+      "Interior & Space Design",
+      "Fashion Design",
+      "Communication & Graphic Design"
+    ],
+    "annual_fee": 210000,
+    "semester_fee": 105000,
+    "eligibility": "Passed 10+2 in any stream with min 50% marks. Qualified in SUAT / UCEED / NID-DAT / NIFT followed by Portfolio Review and Design Interview.",
+    "curriculum_highlights": [
+      "Design Thinking & Methodologies",
+      "UI/UX & Wireframing",
+      "Ergonomics & Human Factors",
+      "Digital Prototyping (Figma/Adobe XD)",
+      "Material Exploration",
+      "Graduation Design Showcase"
+    ],
+    "career_outcomes": [
+      "UI/UX Designer",
+      "Product Designer",
+      "Interior Architect",
+      "Creative Director",
+      "Fashion Stylist",
+      "Brand Identity Designer"
+    ],
+    "top_recruiters": [
+      "TCS Interactive",
+      "Cognizant Studio",
+      "Infosys Design",
+      "Landor & Fitch",
+      "FabIndia",
+      "ZARA"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "ba-llb-hons",
+    "name": "B.A. LL.B. (Integrated Honours)",
+    "school": "School of Law (SOL)",
+    "school_id": "sol",
+    "degree": "Undergraduate Law (Integrated 5-Year)",
+    "duration": "5 Years (10 Semesters)",
+    "slug": "b-a-llb-hons",
+    "specializations": [
+      "Constitutional Law",
+      "Corporate & Commercial Law",
+      "Criminal Law",
+      "Intellectual Property Rights (IPR)",
+      "International Trade Law"
+    ],
+    "annual_fee": 175000,
+    "semester_fee": 87500,
+    "eligibility": "Passed 10+2 with min 50% aggregate marks. Qualified in SUAT / CLAT / LSAT-India.",
+    "curriculum_highlights": [
+      "Constitutional Law of India",
+      "Law of Crimes (IPC & CrPC)",
+      "Law of Contracts & Torts",
+      "Moot Court Practice & Advocacy",
+      "Alternative Dispute Resolution (ADR)",
+      "Supreme Court & High Court Internships"
+    ],
+    "career_outcomes": [
+      "Advocate / Litigator",
+      "Corporate Legal Counsel",
+      "Judicial Officer / Judge",
+      "Legal Consultant",
+      "Public Prosecutor",
+      "Civil Services"
+    ],
+    "top_recruiters": [
+      "Shardul Amarchand Mangaldas",
+      "Khaitan & Co",
+      "Trilegal",
+      "AZB & Partners",
+      "Luthra and Luthra",
+      "Corporate Legal Depts"
+    ],
+    "scholarships_available": true
+  },
+  {
+    "id": "b-pharm",
+    "name": "Bachelor of Pharmacy (B.Pharm)",
+    "school": "School of Pharmacy (SOP)",
+    "school_id": "sop",
+    "degree": "Undergraduate (B.Pharm)",
+    "duration": "4 Years (8 Semesters)",
+    "slug": "b-pharm",
+    "specializations": [
+      "Pharmaceutics",
+      "Pharmacology",
+      "Pharmaceutical Analysis",
+      "Clinical Research & Regulatory Affairs"
+    ],
+    "annual_fee": 195000,
+    "semester_fee": 97500,
+    "eligibility": "Passed 10+2 examination with Physics, Chemistry and Biology/Mathematics with min 50% aggregate marks. SUAT / CUET qualified.",
+    "curriculum_highlights": [
+      "Human Anatomy & Physiology",
+      "Pharmaceutical Organic Chemistry",
+      "Physical Pharmaceutics",
+      "Pharmacology & Toxicology",
+      "Biopharmaceutics & Pharmacokinetics",
+      "Industrial Training"
+    ],
+    "career_outcomes": [
+      "Formulation Scientist",
+      "Drug Inspector",
+      "Clinical Research Associate",
+      "Quality Assurance Analyst",
+      "Regulatory Affairs Specialist"
+    ],
+    "top_recruiters": [
+      "Sun Pharma",
+      "Cipla",
+      "Dr. Reddy's Laboratories",
+      "Lupin",
+      "Torrent Pharmaceuticals",
+      "Mankind Pharma"
+    ],
+    "scholarships_available": true
+  }
+]

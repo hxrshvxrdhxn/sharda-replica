@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Sharda University Global Overlay & AI Styles */
+:root {
+  --primary-dark: #1B2C39;
+  --primary-navy: #23394c;
+  --accent-gold: #EAA914;
+  --accent-gold-hover: #D6950B;
+  --accent-red: #A61C24;
+  --bg-light: #F8FAFC;
+}
+
+/* Ensure original header and z-index hierarchy matches live site 1:1 */
+#strip {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 35px !important;
+  z-index: 2002 !important;
+}
+
+header#header.fixed.dark,
+header#header {
+  position: fixed !important;
+  top: 35px !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2001 !important;
+  height: 60px !important;
+}
+
+.logo img {
+  max-height: 45px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.logo img.fixed-header-logo {
+  display: none !important;
+}
+
+#main-navigation {
+  z-index: 2002 !important;
+}
+
+#main-navigation ul li .sub-menu,
+#main-navigation ul li .dropdown-menu {
+  z-index: 2005 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Sharda AI Liquid Glass Effect */
+.glass-bar {
+  background: rgba(27, 44, 57, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(234, 169, 20, 0.45);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-chip {
+  background: rgba(27, 44, 57, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-chip:hover {
+  background: rgba(234, 169, 20, 0.25);
+  border-color: rgba(234, 169, 20, 0.9);
+  color: #ffffff;
+  transform: translateY(-2px);
+}

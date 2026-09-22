@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+venv/
+.venv/
+
+# Build outputs
+.next/
+frontend/.next/
+out/
+build/
+dist/
+
+# Uncompressed SQLite Master DB (committed as compressed sharda_pages.db.gz)
+backend/data/sharda_pages.db
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# System and logs
+*.log
+.DS_Store
+Thumbs.db
+.gemini/
+.system_generated/
+scratch/
+scratch_*.py
+
+# Environment variables
+.env
+.env.local

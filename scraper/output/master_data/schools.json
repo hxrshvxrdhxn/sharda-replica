@@ -1,0 +1,249 @@
+[
+  {
+    "id": "set",
+    "name": "School of Engineering and Technology (SET)",
+    "short_name": "Engineering & Technology",
+    "slug": "engineering-and-technology",
+    "tagline": "Pioneering Innovation, Engineering Tomorrow",
+    "overview": "SET is one of the premier engineering schools in India offering futuristic engineering degrees in AI/ML, Cloud Computing, Cyber Security, Robotics, Biotech, Civil, and Mechanical Engineering with global industry certifications.",
+    "accreditation": "NBA & NAAC A+ Accredited, approved by AICTE",
+    "departments": [
+      "Computer Science & Engineering",
+      "Information Technology",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Biotechnology",
+      "Electrical & Electronics"
+    ],
+    "popular_programs": [
+      "B.Tech Computer Science (AI/ML)",
+      "B.Tech CSE (Cyber Security)",
+      "B.Tech Cloud Computing",
+      "BCA",
+      "MCA",
+      "M.Tech CSE",
+      "Ph.D in Engineering"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/set_school.jpg"
+  },
+  {
+    "id": "sbs",
+    "name": "School of Business Studies (SBS)",
+    "short_name": "Business Studies",
+    "slug": "business-studies",
+    "tagline": "Creating Future Global Business Leaders",
+    "overview": "SBS offers cutting-edge management programs designed in collaboration with corporate industry leaders. Features experiential learning, live consulting projects, and international immersions.",
+    "accreditation": "IACBE Member, NAAC A+ Accredited",
+    "departments": [
+      "Marketing Management",
+      "Finance & Banking",
+      "Human Resource Management",
+      "Business Analytics",
+      "Supply Chain & Logistics",
+      "International Business"
+    ],
+    "popular_programs": [
+      "MBA Dual Specialization",
+      "MBA Business Analytics",
+      "MBA Healthcare & Hospital Administration",
+      "BBA (Hons)",
+      "B.Com (Hons)",
+      "Ph.D Management"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sbs_school.jpg"
+  },
+  {
+    "id": "smsr",
+    "name": "School of Medical Sciences & Research (SMS&R)",
+    "short_name": "Medical Sciences & Hospital",
+    "slug": "medical-sciences-and-research",
+    "tagline": "World-Class Healthcare & Medical Education",
+    "overview": "Attached to the 1200+ bedded Sharda Super Speciality Hospital, SMS&R provides comprehensive clinical training, cutting-edge surgical suites, and top tier research facilities.",
+    "accreditation": "National Medical Commission (NMC) Approved",
+    "departments": [
+      "General Medicine",
+      "General Surgery",
+      "Pediatrics",
+      "Anesthesiology",
+      "Radiology",
+      "Pathology",
+      "Microbiology"
+    ],
+    "popular_programs": [
+      "MBBS",
+      "MD General Medicine",
+      "MS General Surgery",
+      "MD Pediatrics",
+      "MD Radiology",
+      "M.Sc Medical Anatomy"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/smsr_school.jpg"
+  },
+  {
+    "id": "sds",
+    "name": "School of Dental Sciences (SDS)",
+    "short_name": "Dental Sciences",
+    "slug": "dental-sciences",
+    "tagline": "Precision Dental Care & Advanced Oral Surgery",
+    "overview": "SDS features modern dental operatories, CAD/CAM ceramic labs, and advanced maxillofacial surgery units providing intensive practical hands-on dental patient care.",
+    "accreditation": "Dental Council of India (DCI) Approved",
+    "departments": [
+      "Oral & Maxillofacial Surgery",
+      "Orthodontics",
+      "Prosthodontics",
+      "Conservative Dentistry & Endodontics",
+      "Periodontology"
+    ],
+    "popular_programs": [
+      "BDS",
+      "MDS Orthodontics",
+      "MDS Oral & Maxillofacial Surgery",
+      "MDS Conservative Dentistry"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sds_school.jpg"
+  },
+  {
+    "id": "sol",
+    "name": "School of Law (SOL)",
+    "short_name": "Law & Legal Studies",
+    "slug": "law",
+    "tagline": "Advancing Justice, Nurturing Legal Minds",
+    "overview": "SOL equips aspiring lawyers with practical courtroom skills via moot court competitions, legal aid clinics, and internships at the Supreme Court, High Courts, and top law firms.",
+    "accreditation": "Bar Council of India (BCI) Approved",
+    "departments": [
+      "Constitutional Law",
+      "Corporate & Commercial Law",
+      "Criminal Law",
+      "Intellectual Property Rights",
+      "International Law"
+    ],
+    "popular_programs": [
+      "B.A. LL.B. (Hons)",
+      "B.B.A. LL.B. (Hons)",
+      "LL.B.",
+      "LL.M. Corporate Law",
+      "LL.M. Criminal Law",
+      "Ph.D in Law"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sol_school.jpg"
+  },
+  {
+    "id": "sod",
+    "name": "School of Design, Architecture & Planning (SAP)",
+    "short_name": "Design & Architecture",
+    "slug": "design",
+    "tagline": "Designing Spaces, Imagining the Future",
+    "overview": "Fostering creativity, sustainable architecture, UI/UX, product design, and interior architecture with state-of-the-art design studios and digital fabrication labs.",
+    "accreditation": "Council of Architecture (COA) Approved",
+    "departments": [
+      "Architecture",
+      "Interior Design",
+      "Communication Design",
+      "Fashion Design",
+      "Product Design"
+    ],
+    "popular_programs": [
+      "B.Arch",
+      "B.Des (UI/UX Design)",
+      "B.Des (Interior Design)",
+      "B.Des (Fashion Design)",
+      "M.Des",
+      "M.Arch"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sap_school.jpg"
+  },
+  {
+    "id": "sop",
+    "name": "School of Pharmacy (SOP)",
+    "short_name": "Pharmacy",
+    "slug": "pharmacy",
+    "tagline": "Innovation in Drug Discovery & Clinical Formulation",
+    "overview": "Offering PCI-approved programs focused on pharmaceutical chemistry, pharmacology, clinical pharmacy, and drug discovery research.",
+    "accreditation": "Pharmacy Council of India (PCI) Approved",
+    "departments": [
+      "Pharmaceutics",
+      "Pharmacology",
+      "Pharmaceutical Chemistry",
+      "Pharmacognosy"
+    ],
+    "popular_programs": [
+      "B.Pharm",
+      "D.Pharm",
+      "M.Pharm Pharmaceutics",
+      "M.Pharm Pharmacology",
+      "Ph.D Pharmacy"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sop_school.jpg"
+  },
+  {
+    "id": "sahs",
+    "name": "School of Allied Health Sciences (SAHS)",
+    "short_name": "Allied Health Sciences",
+    "slug": "allied-health-sciences",
+    "tagline": "Empowering Healthcare Diagnostics & Therapy",
+    "overview": "Specializing in Physiotherapy, Medical Lab Technology, Radiology & Imaging, Optometry, and Nutrition with direct training in Sharda Hospital.",
+    "accreditation": "UP State Medical Faculty & UGC Approved",
+    "departments": [
+      "Physiotherapy",
+      "Medical Lab Technology",
+      "Radiology & Imaging",
+      "Optometry",
+      "Clinical Nutrition"
+    ],
+    "popular_programs": [
+      "BPT (Bachelor of Physiotherapy)",
+      "B.Sc Medical Lab Technology (BMLT)",
+      "B.Sc Radiology & Imaging",
+      "B.Sc Optometry",
+      "MPT"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/sahs_school.jpg"
+  },
+  {
+    "id": "shss",
+    "name": "School of Humanities and Social Sciences (SHSS)",
+    "short_name": "Humanities & Social Sciences",
+    "slug": "humanities-and-social-sciences",
+    "tagline": "Understanding Humanity, Shaping Culture & Society",
+    "overview": "Interdisciplinary learning across Psychology, Economics, Political Science, English Literature, and Sociology, preparing students for civil services, journalism, and public policy.",
+    "accreditation": "UGC Approved",
+    "departments": [
+      "Psychology",
+      "English",
+      "Economics",
+      "Political Science & Public Policy",
+      "Sociology"
+    ],
+    "popular_programs": [
+      "B.A. (Hons) Applied Psychology",
+      "B.A. (Hons) Economics",
+      "B.A. (Hons) English",
+      "B.A. (Hons) Political Science",
+      "M.A. Clinical Psychology"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/shss_school.jpg"
+  },
+  {
+    "id": "soag",
+    "name": "School of Agricultural Sciences (SOAG)",
+    "short_name": "Agricultural Sciences",
+    "slug": "agricultural-sciences",
+    "tagline": "Smart Agriculture, Food Security & Agribusiness",
+    "overview": "Equipped with dedicated agricultural research farms, polyhouses, and agronomy labs focusing on precision agriculture, organic farming, and agribusiness management.",
+    "accreditation": "ICAR-aligned Curriculum & UGC Approved",
+    "departments": [
+      "Agronomy",
+      "Horticulture",
+      "Genetics & Plant Breeding",
+      "Soil Science",
+      "Agricultural Economics"
+    ],
+    "popular_programs": [
+      "B.Sc (Hons) Agriculture",
+      "M.Sc Agronomy",
+      "M.Sc Horticulture",
+      "Ph.D Agricultural Sciences"
+    ],
+    "image": "https://media.sharda.ac.in/sharda.ac.in/sharda-assets/imgs/soag_school.jpg"
+  }
+]

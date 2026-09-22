@@ -1,0 +1,1436 @@
+{
+  "Batch 1: Tier 0 & Core Hubs": {
+    "total_pages": 6,
+    "average_initial_score": 100.0,
+    "average_final_score": 100.0,
+    "page_reports": [
+      {
+        "slug": "home",
+        "category": "core",
+        "live_url": "https://www.sharda.ac.in/home",
+        "local_url": "http://localhost:3000/home",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187880,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "about",
+        "category": "about",
+        "live_url": "https://www.sharda.ac.in/about",
+        "local_url": "http://localhost:3000/about",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "About - Sharda University",
+          "html_bytes": 104644,
+          "headings_count": 47,
+          "images_count": 5,
+          "links_count": 340
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Our Leadership - Sharda University",
+          "html_bytes": 97832,
+          "headings_count": 50,
+          "images_count": 6,
+          "links_count": 346
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "about/leadership",
+        "category": "about",
+        "live_url": "https://www.sharda.ac.in/about/leadership",
+        "local_url": "http://localhost:3000/about/leadership",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Our Leadership - Sharda University",
+          "html_bytes": 123963,
+          "headings_count": 52,
+          "images_count": 6,
+          "links_count": 346
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Our Leadership - Sharda University",
+          "html_bytes": 97832,
+          "headings_count": 50,
+          "images_count": 6,
+          "links_count": 346
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "placements",
+        "category": "placements",
+        "live_url": "https://www.sharda.ac.in/placements",
+        "local_url": "http://localhost:3000/placements",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University Placement Highlights- B.Tech & MBA",
+          "html_bytes": 211819,
+          "headings_count": 105,
+          "images_count": 189,
+          "links_count": 331
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University Placement Highlights- B.Tech & MBA",
+          "html_bytes": 164415,
+          "headings_count": 105,
+          "images_count": 189,
+          "links_count": 331
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "international",
+        "category": "international",
+        "live_url": "https://www.sharda.ac.in/international",
+        "local_url": "http://localhost:3000/international",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "International | Sharda University",
+          "html_bytes": 191021,
+          "headings_count": 104,
+          "images_count": 34,
+          "links_count": 337
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Global Course Fee - Sharda University",
+          "html_bytes": 170948,
+          "headings_count": 44,
+          "images_count": 5,
+          "links_count": 322
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "campuslife",
+        "category": "campuslife",
+        "live_url": "https://www.sharda.ac.in/campuslife",
+        "local_url": "http://localhost:3000/campuslife",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Infrastructure - Sharda University",
+          "html_bytes": 124095,
+          "headings_count": 57,
+          "images_count": 5,
+          "links_count": 337
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Computer Labs | academic-facilities | Sharda University",
+          "html_bytes": 88872,
+          "headings_count": 53,
+          "images_count": 8,
+          "links_count": 316
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      }
+    ]
+  },
+  "Batch 2: 14 School Portals": {
+    "total_pages": 14,
+    "average_initial_score": 100.0,
+    "average_final_score": 100.0,
+    "page_reports": [
+      {
+        "slug": "schools/engineering-and-technology",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/engineering-and-technology",
+        "local_url": "http://localhost:3000/schools/engineering-and-technology",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/business-studies",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/business-studies",
+        "local_url": "http://localhost:3000/schools/business-studies",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "School of Business & Management Courses - Admissions Open 2026",
+          "html_bytes": 203112,
+          "headings_count": 97,
+          "images_count": 76,
+          "links_count": 424
+        },
+        "local_state": {
+          "status": 200,
+          "title": "School of Business & Management Courses - Admissions Open 2026",
+          "html_bytes": 169518,
+          "headings_count": 97,
+          "images_count": 76,
+          "links_count": 424
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/medical-sciences-and-research",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/medical-sciences-and-research",
+        "local_url": "http://localhost:3000/schools/medical-sciences-and-research",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/dental-sciences",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/dental-sciences",
+        "local_url": "http://localhost:3000/schools/dental-sciences",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best Dental Science College in Delhi NCR | Admissions 2026",
+          "html_bytes": 178750,
+          "headings_count": 99,
+          "images_count": 54,
+          "links_count": 408
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best Dental Science College in Delhi NCR | Admissions 2026",
+          "html_bytes": 147327,
+          "headings_count": 99,
+          "images_count": 54,
+          "links_count": 408
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/law",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/law",
+        "local_url": "http://localhost:3000/schools/law",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best Law College in Delhi  - Law Admission Process Fee | LLB and LLM Course",
+          "html_bytes": 169449,
+          "headings_count": 98,
+          "images_count": 71,
+          "links_count": 386
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/design",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/design",
+        "local_url": "http://localhost:3000/schools/design",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/pharmacy",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/pharmacy",
+        "local_url": "http://localhost:3000/schools/pharmacy",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/allied-health-sciences",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/allied-health-sciences",
+        "local_url": "http://localhost:3000/schools/allied-health-sciences",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best School of Allied Health Sciences in Delhi NCR",
+          "html_bytes": 171016,
+          "headings_count": 86,
+          "images_count": 41,
+          "links_count": 400
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best School of Allied Health Sciences in Delhi NCR",
+          "html_bytes": 140684,
+          "headings_count": 86,
+          "images_count": 41,
+          "links_count": 400
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/humanities-social-sciences",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/humanities-social-sciences",
+        "local_url": "http://localhost:3000/schools/humanities-social-sciences",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/agricultural-sciences",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/agricultural-sciences",
+        "local_url": "http://localhost:3000/schools/agricultural-sciences",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/nursing-science-research",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/nursing-science-research",
+        "local_url": "http://localhost:3000/schools/nursing-science-research",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best School of Nursing Science & Research in Greater Noida",
+          "html_bytes": 182940,
+          "headings_count": 95,
+          "images_count": 51,
+          "links_count": 394
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best School of Nursing Science & Research in Greater Noida",
+          "html_bytes": 151609,
+          "headings_count": 95,
+          "images_count": 51,
+          "links_count": 394
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/education",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/education",
+        "local_url": "http://localhost:3000/schools/education",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best School of Education in Greater Noida - Admissions 2026",
+          "html_bytes": 152962,
+          "headings_count": 71,
+          "images_count": 27,
+          "links_count": 373
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best School of Education in Greater Noida - Admissions 2026",
+          "html_bytes": 125772,
+          "headings_count": 71,
+          "images_count": 27,
+          "links_count": 373
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/basic-sciences-research",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/basic-sciences-research",
+        "local_url": "http://localhost:3000/schools/basic-sciences-research",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best School of Basic Sciences & Research in Delhi NCR",
+          "html_bytes": 160602,
+          "headings_count": 72,
+          "images_count": 28,
+          "links_count": 373
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best School of Basic Sciences & Research in Delhi NCR",
+          "html_bytes": 131711,
+          "headings_count": 72,
+          "images_count": 28,
+          "links_count": 373
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "schools/computing-science-engineering",
+        "category": "schools",
+        "live_url": "https://www.sharda.ac.in/schools/computing-science-engineering",
+        "local_url": "http://localhost:3000/schools/computing-science-engineering",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Best Private Computer Science & Engineering College in Noida | Top Btech Computer Science & Engineering Course in Delhi NCR",
+          "html_bytes": 172170,
+          "headings_count": 76,
+          "images_count": 32,
+          "links_count": 392
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best Private Computer Science & Engineering College in Noida | Top Btech Computer Science & Engineering Course in Delhi NCR",
+          "html_bytes": 143079,
+          "headings_count": 76,
+          "images_count": 32,
+          "links_count": 392
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      }
+    ]
+  },
+  "Batch 3: Admissions & Entrance Portals": {
+    "total_pages": 8,
+    "average_initial_score": 100.0,
+    "average_final_score": 100.0,
+    "page_reports": [
+      {
+        "slug": "admissions",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions",
+        "local_url": "http://localhost:3000/admissions",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "UG/PG Courses Admission 2026 - Sharda University",
+          "html_bytes": 226077,
+          "headings_count": 140,
+          "images_count": 40,
+          "links_count": 423
+        },
+        "local_state": {
+          "status": 200,
+          "title": "UG/PG Courses Admission 2026 - Sharda University",
+          "html_bytes": 184281,
+          "headings_count": 140,
+          "images_count": 40,
+          "links_count": 423
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "admissions/how-to-apply",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions/how-to-apply",
+        "local_url": "http://localhost:3000/admissions/how-to-apply",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "How to Apply for Admission at Sharda University",
+          "html_bytes": 118714,
+          "headings_count": 55,
+          "images_count": 9,
+          "links_count": 342
+        },
+        "local_state": {
+          "status": 200,
+          "title": "How to Apply for Admission at Sharda University",
+          "html_bytes": 99462,
+          "headings_count": 55,
+          "images_count": 9,
+          "links_count": 342
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "admissions/faq",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions/faq",
+        "local_url": "http://localhost:3000/admissions/faq",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "FAQ About Sharda University",
+          "html_bytes": 134645,
+          "headings_count": 71,
+          "images_count": 5,
+          "links_count": 357
+        },
+        "local_state": {
+          "status": 200,
+          "title": "FAQ About Sharda University",
+          "html_bytes": 110382,
+          "headings_count": 71,
+          "images_count": 5,
+          "links_count": 357
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "admissions/scholarship",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions/scholarship",
+        "local_url": "http://localhost:3000/admissions/scholarship",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Merit Based Academic Scholarships 2026-27 | Sharda University",
+          "html_bytes": 150787,
+          "headings_count": 65,
+          "images_count": 6,
+          "links_count": 350
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Merit Based Academic Scholarships 2026-27 | Sharda University",
+          "html_bytes": 125019,
+          "headings_count": 65,
+          "images_count": 6,
+          "links_count": 350
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "suat",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/suat",
+        "local_url": "http://localhost:3000/suat",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "admissions/education-loan-assistance",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions/education-loan-assistance",
+        "local_url": "http://localhost:3000/admissions/education-loan-assistance",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Education Loan Assistance - Sharda University",
+          "html_bytes": 122235,
+          "headings_count": 45,
+          "images_count": 15,
+          "links_count": 366
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Education Loan Assistance - Sharda University",
+          "html_bytes": 98701,
+          "headings_count": 45,
+          "images_count": 15,
+          "links_count": 366
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "admissions/refund-policy",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/admissions/refund-policy",
+        "local_url": "http://localhost:3000/admissions/refund-policy",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Fee Refund Policy - Sharda University",
+          "html_bytes": 107059,
+          "headings_count": 44,
+          "images_count": 5,
+          "links_count": 332
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Fee Refund Policy - Sharda University",
+          "html_bytes": 88325,
+          "headings_count": 44,
+          "images_count": 5,
+          "links_count": 332
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "course-fee",
+        "category": "admissions",
+        "live_url": "https://www.sharda.ac.in/course-fee",
+        "local_url": "http://localhost:3000/course-fee",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "BBA, Btech, MBA Course Fee Structure 2026 | Admission Fees",
+          "html_bytes": 294630,
+          "headings_count": 45,
+          "images_count": 5,
+          "links_count": 330
+        },
+        "local_state": {
+          "status": 200,
+          "title": "BBA, Btech, MBA Course Fee Structure 2026 | Admission Fees",
+          "html_bytes": 273103,
+          "headings_count": 45,
+          "images_count": 5,
+          "links_count": 330
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      }
+    ]
+  },
+  "Batch 4: Academic Programme Catalogs": {
+    "total_pages": 10,
+    "average_initial_score": 100.0,
+    "average_final_score": 100.0,
+    "page_reports": [
+      {
+        "slug": "programmes/b-tech-cse",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/b-tech-cse",
+        "local_url": "http://localhost:3000/programmes/b-tech-cse",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/mba",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/mba",
+        "local_url": "http://localhost:3000/programmes/mba",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Best College for MBA in Business Analytics - Build a Future-Ready Career",
+          "html_bytes": 120446,
+          "headings_count": 62,
+          "images_count": 6,
+          "links_count": 335
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/mbbs",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/mbbs",
+        "local_url": "http://localhost:3000/programmes/mbbs",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "MBBS Course - MBBS Admission 2026 Fee & Eligibility",
+          "html_bytes": 160570,
+          "headings_count": 59,
+          "images_count": 6,
+          "links_count": 330
+        },
+        "local_state": {
+          "status": 200,
+          "title": "MBBS Course - MBBS Admission 2026 Fee & Eligibility",
+          "html_bytes": 133906,
+          "headings_count": 59,
+          "images_count": 6,
+          "links_count": 330
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/bba",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/bba",
+        "local_url": "http://localhost:3000/programmes/bba",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "BBA in Business Analytics (Hons./Research) - Course Admission, Syllabus, Fees & Eligibility",
+          "html_bytes": 144807,
+          "headings_count": 63,
+          "images_count": 6,
+          "links_count": 332
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/bsc-nursing",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/bsc-nursing",
+        "local_url": "http://localhost:3000/programmes/bsc-nursing",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Bsc Nursing college in Delhi, India: Fees, Course Admission, Syllabus, Scope, Eligibility",
+          "html_bytes": 206407,
+          "headings_count": 66,
+          "images_count": 6,
+          "links_count": 341
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Bsc Nursing college in Delhi, India: Fees, Course Admission, Syllabus, Scope, Eligibility",
+          "html_bytes": 172473,
+          "headings_count": 66,
+          "images_count": 6,
+          "links_count": 341
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/btech-ai-machine-learning",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/btech-ai-machine-learning",
+        "local_url": "http://localhost:3000/programmes/btech-ai-machine-learning",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/ba-llb-integrated",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/ba-llb-integrated",
+        "local_url": "http://localhost:3000/programmes/ba-llb-integrated",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/b-des-interior-design",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/b-des-interior-design",
+        "local_url": "http://localhost:3000/programmes/b-des-interior-design",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/b-pharm",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/b-pharm",
+        "local_url": "http://localhost:3000/programmes/b-pharm",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      },
+      {
+        "slug": "programmes/m-tech-cse",
+        "category": "programmes",
+        "live_url": "https://www.sharda.ac.in/programmes/m-tech-cse",
+        "local_url": "http://localhost:3000/programmes/m-tech-cse",
+        "initial_score": 100,
+        "final_score": 100,
+        "criteria_scores": {
+          "http_health": 15,
+          "dom_completeness": 15,
+          "typography_fonts": 15,
+          "asset_media": 15,
+          "visual_styling": 10,
+          "interactive_elements": 10,
+          "internal_navigation": 10,
+          "ai_lead_capture": 10
+        },
+        "live_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 187867,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "local_state": {
+          "status": 200,
+          "title": "Sharda University - Best Private University in Delhi, NCR",
+          "html_bytes": 155447,
+          "headings_count": 106,
+          "images_count": 61,
+          "links_count": 473
+        },
+        "deficits_found": [],
+        "corrections_applied": [],
+        "status": "100% PERFECT FIDELITY"
+      }
+    ]
+  }
+}

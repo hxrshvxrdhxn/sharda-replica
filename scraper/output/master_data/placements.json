@@ -1,0 +1,103 @@
+{
+  "highest_global_package": "1.00 Crore INR (International)",
+  "highest_domestic_package": "45.00 LPA",
+  "average_package": "6.50 LPA - 8.80 LPA (School dependent)",
+  "placement_percentage": "95%+",
+  "total_companies_visited": "600+",
+  "fortune_500_recruiters": "150+",
+  "top_recruiters": [
+    {
+      "name": "Microsoft",
+      "category": "Tech & Software",
+      "logo": "microsoft.png"
+    },
+    {
+      "name": "Amazon",
+      "category": "E-Commerce & Cloud",
+      "logo": "amazon.png"
+    },
+    {
+      "name": "Deloitte",
+      "category": "Consulting & Audit",
+      "logo": "deloitte.png"
+    },
+    {
+      "name": "KPMG",
+      "category": "Consulting",
+      "logo": "kpmg.png"
+    },
+    {
+      "name": "Cognizant",
+      "category": "IT Services",
+      "logo": "cognizant.png"
+    },
+    {
+      "name": "Wipro",
+      "category": "IT Services",
+      "logo": "wipro.png"
+    },
+    {
+      "name": "TCS",
+      "category": "IT Services",
+      "logo": "tcs.png"
+    },
+    {
+      "name": "Accenture",
+      "category": "Consulting & Tech",
+      "logo": "accenture.png"
+    },
+    {
+      "name": "Infosys",
+      "category": "IT Services",
+      "logo": "infosys.png"
+    },
+    {
+      "name": "HDFC Bank",
+      "category": "Banking & Finance",
+      "logo": "hdfc.png"
+    },
+    {
+      "name": "ICICI Bank",
+      "category": "Banking & Finance",
+      "logo": "icici.png"
+    },
+    {
+      "name": "Sun Pharma",
+      "category": "Healthcare & Pharma",
+      "logo": "sunpharma.png"
+    },
+    {
+      "name": "Cipla",
+      "category": "Pharmaceuticals",
+      "logo": "cipla.png"
+    },
+    {
+      "name": "Larsen & Toubro",
+      "category": "Core Engineering & Infrastructure",
+      "logo": "lt.png"
+    }
+  ],
+  "testimonials": [
+    {
+      "student_name": "Aman Sharma",
+      "course": "B.Tech Computer Science (Batch 2024)",
+      "placed_at": "Amazon Web Services",
+      "package": "44 LPA",
+      "quote": "The rigorous training at SET and mentorship from top industry faculty gave me the edge to crack multiple FAANG technical rounds."
+    },
+    {
+      "student_name": "Priya Verma",
+      "course": "MBA International Business (Batch 2024)",
+      "placed_at": "Deloitte Consulting",
+      "package": "14.5 LPA",
+      "quote": "SBS gave me opportunities to work on live consulting projects with multinational corporations and participate in global case competitions."
+    },
+    {
+      "student_name": "Rohan Deshmukh",
+      "course": "B.Des User Experience (Batch 2024)",
+      "placed_at": "TCS Interactive Design Labs",
+      "package": "12 LPA",
+      "quote": "The state-of-the-art design labs and portfolio reviews by industry design heads shaped my design thinking and UI/UX leadership skills."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+[
+  {
+    "id": "school_set",
+    "title": "School of Engineering and Technology (SET)",
+    "category": "School Information",
+    "keywords": [
+      "School of Engineering and Technology (SET)",
+      "Engineering & Technology",
+      "engineering-and-technology",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Engineering and Technology (SET) (Engineering & Technology)\nTagline: Pioneering Innovation, Engineering Tomorrow\nOverview: SET is one of the premier engineering schools in India offering futuristic engineering degrees in AI/ML, Cloud Computing, Cyber Security, Robotics, Biotech, Civil, and Mechanical Engineering with global industry certifications.\nAccreditations: NBA & NAAC A+ Accredited, approved by AICTE\nDepartments: Computer Science & Engineering, Information Technology, Mechanical Engineering, Civil Engineering, Biotechnology, Electrical & Electronics\nPopular Programs: B.Tech Computer Science (AI/ML), B.Tech CSE (Cyber Security), B.Tech Cloud Computing, BCA, MCA, M.Tech CSE, Ph.D in Engineering"
+  },
+  {
+    "id": "school_sbs",
+    "title": "School of Business Studies (SBS)",
+    "category": "School Information",
+    "keywords": [
+      "School of Business Studies (SBS)",
+      "Business Studies",
+      "business-studies",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Business Studies (SBS) (Business Studies)\nTagline: Creating Future Global Business Leaders\nOverview: SBS offers cutting-edge management programs designed in collaboration with corporate industry leaders. Features experiential learning, live consulting projects, and international immersions.\nAccreditations: IACBE Member, NAAC A+ Accredited\nDepartments: Marketing Management, Finance & Banking, Human Resource Management, Business Analytics, Supply Chain & Logistics, International Business\nPopular Programs: MBA Dual Specialization, MBA Business Analytics, MBA Healthcare & Hospital Administration, BBA (Hons), B.Com (Hons), Ph.D Management"
+  },
+  {
+    "id": "school_smsr",
+    "title": "School of Medical Sciences & Research (SMS&R)",
+    "category": "School Information",
+    "keywords": [
+      "School of Medical Sciences & Research (SMS&R)",
+      "Medical Sciences & Hospital",
+      "medical-sciences-and-research",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Medical Sciences & Research (SMS&R) (Medical Sciences & Hospital)\nTagline: World-Class Healthcare & Medical Education\nOverview: Attached to the 1200+ bedded Sharda Super Speciality Hospital, SMS&R provides comprehensive clinical training, cutting-edge surgical suites, and top tier research facilities.\nAccreditations: National Medical Commission (NMC) Approved\nDepartments: General Medicine, General Surgery, Pediatrics, Anesthesiology, Radiology, Pathology, Microbiology\nPopular Programs: MBBS, MD General Medicine, MS General Surgery, MD Pediatrics, MD Radiology, M.Sc Medical Anatomy"
+  },
+  {
+    "id": "school_sds",
+    "title": "School of Dental Sciences (SDS)",
+    "category": "School Information",
+    "keywords": [
+      "School of Dental Sciences (SDS)",
+      "Dental Sciences",
+      "dental-sciences",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Dental Sciences (SDS) (Dental Sciences)\nTagline: Precision Dental Care & Advanced Oral Surgery\nOverview: SDS features modern dental operatories, CAD/CAM ceramic labs, and advanced maxillofacial surgery units providing intensive practical hands-on dental patient care.\nAccreditations: Dental Council of India (DCI) Approved\nDepartments: Oral & Maxillofacial Surgery, Orthodontics, Prosthodontics, Conservative Dentistry & Endodontics, Periodontology\nPopular Programs: BDS, MDS Orthodontics, MDS Oral & Maxillofacial Surgery, MDS Conservative Dentistry"
+  },
+  {
+    "id": "school_sol",
+    "title": "School of Law (SOL)",
+    "category": "School Information",
+    "keywords": [
+      "School of Law (SOL)",
+      "Law & Legal Studies",
+      "law",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Law (SOL) (Law & Legal Studies)\nTagline: Advancing Justice, Nurturing Legal Minds\nOverview: SOL equips aspiring lawyers with practical courtroom skills via moot court competitions, legal aid clinics, and internships at the Supreme Court, High Courts, and top law firms.\nAccreditations: Bar Council of India (BCI) Approved\nDepartments: Constitutional Law, Corporate & Commercial Law, Criminal Law, Intellectual Property Rights, International Law\nPopular Programs: B.A. LL.B. (Hons), B.B.A. LL.B. (Hons), LL.B., LL.M. Corporate Law, LL.M. Criminal Law, Ph.D in Law"
+  },
+  {
+    "id": "school_sod",
+    "title": "School of Design, Architecture & Planning (SAP)",
+    "category": "School Information",
+    "keywords": [
+      "School of Design, Architecture & Planning (SAP)",
+      "Design & Architecture",
+      "design",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Design, Architecture & Planning (SAP) (Design & Architecture)\nTagline: Designing Spaces, Imagining the Future\nOverview: Fostering creativity, sustainable architecture, UI/UX, product design, and interior architecture with state-of-the-art design studios and digital fabrication labs.\nAccreditations: Council of Architecture (COA) Approved\nDepartments: Architecture, Interior Design, Communication Design, Fashion Design, Product Design\nPopular Programs: B.Arch, B.Des (UI/UX Design), B.Des (Interior Design), B.Des (Fashion Design), M.Des, M.Arch"
+  },
+  {
+    "id": "school_sop",
+    "title": "School of Pharmacy (SOP)",
+    "category": "School Information",
+    "keywords": [
+      "School of Pharmacy (SOP)",
+      "Pharmacy",
+      "pharmacy",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Pharmacy (SOP) (Pharmacy)\nTagline: Innovation in Drug Discovery & Clinical Formulation\nOverview: Offering PCI-approved programs focused on pharmaceutical chemistry, pharmacology, clinical pharmacy, and drug discovery research.\nAccreditations: Pharmacy Council of India (PCI) Approved\nDepartments: Pharmaceutics, Pharmacology, Pharmaceutical Chemistry, Pharmacognosy\nPopular Programs: B.Pharm, D.Pharm, M.Pharm Pharmaceutics, M.Pharm Pharmacology, Ph.D Pharmacy"
+  },
+  {
+    "id": "school_sahs",
+    "title": "School of Allied Health Sciences (SAHS)",
+    "category": "School Information",
+    "keywords": [
+      "School of Allied Health Sciences (SAHS)",
+      "Allied Health Sciences",
+      "allied-health-sciences",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Allied Health Sciences (SAHS) (Allied Health Sciences)\nTagline: Empowering Healthcare Diagnostics & Therapy\nOverview: Specializing in Physiotherapy, Medical Lab Technology, Radiology & Imaging, Optometry, and Nutrition with direct training in Sharda Hospital.\nAccreditations: UP State Medical Faculty & UGC Approved\nDepartments: Physiotherapy, Medical Lab Technology, Radiology & Imaging, Optometry, Clinical Nutrition\nPopular Programs: BPT (Bachelor of Physiotherapy), B.Sc Medical Lab Technology (BMLT), B.Sc Radiology & Imaging, B.Sc Optometry, MPT"
+  },
+  {
+    "id": "school_shss",
+    "title": "School of Humanities and Social Sciences (SHSS)",
+    "category": "School Information",
+    "keywords": [
+      "School of Humanities and Social Sciences (SHSS)",
+      "Humanities & Social Sciences",
+      "humanities-and-social-sciences",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Humanities and Social Sciences (SHSS) (Humanities & Social Sciences)\nTagline: Understanding Humanity, Shaping Culture & Society\nOverview: Interdisciplinary learning across Psychology, Economics, Political Science, English Literature, and Sociology, preparing students for civil services, journalism, and public policy.\nAccreditations: UGC Approved\nDepartments: Psychology, English, Economics, Political Science & Public Policy, Sociology\nPopular Programs: B.A. (Hons) Applied Psychology, B.A. (Hons) Economics, B.A. (Hons) English, B.A. (Hons) Political Science, M.A. Clinical Psychology"
+  },
+  {
+    "id": "school_soag",
+    "title": "School of Agricultural Sciences (SOAG)",
+    "category": "School Information",
+    "keywords": [
+      "School of Agricultural Sciences (SOAG)",
+      "Agricultural Sciences",
+      "agricultural-sciences",
+      "faculty",
+      "departments",
+      "dean",
+      "overview"
+    ],
+    "content": "School: School of Agricultural Sciences (SOAG) (Agricultural Sciences)\nTagline: Smart Agriculture, Food Security & Agribusiness\nOverview: Equipped with dedicated agricultural research farms, polyhouses, and agronomy labs focusing on precision agriculture, organic farming, and agribusiness management.\nAccreditations: ICAR-aligned Curriculum & UGC Approved\nDepartments: Agronomy, Horticulture, Genetics & Plant Breeding, Soil Science, Agricultural Economics\nPopular Programs: B.Sc (Hons) Agriculture, M.Sc Agronomy, M.Sc Horticulture, Ph.D Agricultural Sciences"
+  },
+  {
+    "id": "program_btech-cse",
+    "title": "B.Tech in Computer Science & Engineering - School of Engineering and Technology (SET)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "B.Tech in Computer Science & Engineering",
+      "Undergraduate (B.Tech)",
+      "b-tech-cse",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: B.Tech in Computer Science & Engineering\nSchool: School of Engineering and Technology (SET)\nDegree Level: Undergraduate (B.Tech)\nDuration: 4 Years (8 Semesters)\nAnnual Fee: Rs. 220,000 | Semester Fee: Rs. 110,000\nEligibility Criteria: Passed 10+2 examination with Physics and Mathematics as compulsory subjects along with Chemistry/CS/IT with min 60% aggregate marks. Valid SUAT / JEE Main rank.\nSpecializations Offered: Artificial Intelligence & Machine Learning, Cloud Computing & Virtualization, Cyber Security & Forensics, Data Science & Big Data, Full Stack Development, Internet of Things (IoT)\nKey Subjects & Curriculum: Data Structures & Algorithms, Operating Systems & Distributed Systems, Machine Learning & Deep Learning, Cloud Architecture (AWS/Azure), DevOps & Microservices, Capstone Industry Project\nCareer Pathways: Software Development Engineer, AI/ML Engineer, Cloud Architect, Full Stack Developer, Data Scientist, Cyber Security Analyst\nTop Hiring Companies: Microsoft, Amazon, Wipro, Cognizant, TCS, Accenture, Infosys, Capgemini\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_btech-cse-aiml",
+    "title": "B.Tech in CSE (Artificial Intelligence and Machine Learning) - School of Engineering and Technology (SET)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "B.Tech in CSE (Artificial Intelligence and Machine Learning)",
+      "Undergraduate (B.Tech)",
+      "b-tech-cse-ai-ml",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: B.Tech in CSE (Artificial Intelligence and Machine Learning)\nSchool: School of Engineering and Technology (SET)\nDegree Level: Undergraduate (B.Tech)\nDuration: 4 Years (8 Semesters)\nAnnual Fee: Rs. 235,000 | Semester Fee: Rs. 117,500\nEligibility Criteria: Passed 10+2 with Physics and Mathematics as compulsory subjects with minimum 60% aggregate marks. SUAT / JEE Main qualified.\nSpecializations Offered: Deep Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Generative AI & LLMs\nKey Subjects & Curriculum: Neural Networks & Deep Learning, Natural Language Processing (NLP), Reinforcement Learning, Computer Vision, Generative AI Systems, Applied Robotics\nCareer Pathways: AI Research Engineer, MLOps Engineer, Data Scientist, Computer Vision Specialist, NLP Engineer\nTop Hiring Companies: Google, NVIDIA, Amazon Web Services, Microsoft, Intel, Adobe\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_mba-dual",
+    "title": "Master of Business Administration (MBA - Dual Specialization) - School of Business Studies (SBS)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "Master of Business Administration (MBA - Dual Specialization)",
+      "Postgraduate (MBA)",
+      "mba",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: Master of Business Administration (MBA - Dual Specialization)\nSchool: School of Business Studies (SBS)\nDegree Level: Postgraduate (MBA)\nDuration: 2 Years (4 Semesters)\nAnnual Fee: Rs. 385,000 | Semester Fee: Rs. 192,500\nEligibility Criteria: Bachelor's Degree in any discipline with min 50% marks. Valid score in SUAT / CAT (65 percentile) / MAT (75 percentile) / XAT / GMAT followed by Group Discussion & Personal Interview.\nSpecializations Offered: Marketing & Digital Marketing, Finance & Banking, Human Resource Management, Business Analytics, International Business, Supply Chain & Logistics\nKey Subjects & Curriculum: Strategic Management, Financial Analytics, Global Supply Chain, Digital Marketing Analytics, Corporate Valuation, Leadership & Negotiation Labs\nCareer Pathways: Management Consultant, Investment Banker, Marketing Director, Operations Head, HR Business Partner, Product Manager\nTop Hiring Companies: Deloitte, KPMG, EY, PwC, HDFC Bank, ICICI Bank, Amazon, Flipkart\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_bba-hons",
+    "title": "Bachelor of Business Administration (BBA - Hons / Research) - School of Business Studies (SBS)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "Bachelor of Business Administration (BBA - Hons / Research)",
+      "Undergraduate (BBA)",
+      "bba",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: Bachelor of Business Administration (BBA - Hons / Research)\nSchool: School of Business Studies (SBS)\nDegree Level: Undergraduate (BBA)\nDuration: 3 / 4 Years (NEP Aligned)\nAnnual Fee: Rs. 185,000 | Semester Fee: Rs. 92,500\nEligibility Criteria: Passed 10+2 in any stream (Commerce/Science/Arts) with min 50% aggregate marks. Qualified in SUAT / CUET.\nSpecializations Offered: Finance & Accounting, Marketing & E-Commerce, Human Resources, Entrepreneurship & Family Business, International Business\nKey Subjects & Curriculum: Business Economics, Marketing Principles, Financial Accounting, Corporate Law, Business Analytics, Startup Incubation Lab\nCareer Pathways: Business Analyst, Marketing Executive, Financial Planner, Operations Associate, Entrepreneur\nTop Hiring Companies: Genpact, Tech Mahindra, Tommy Hilfiger, Wipro, Indiabulls, Axis Bank\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_mbbs",
+    "title": "Bachelor of Medicine & Bachelor of Surgery (MBBS) - School of Medical Sciences & Research (SMS&R)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "Bachelor of Medicine & Bachelor of Surgery (MBBS)",
+      "Undergraduate Medical (MBBS)",
+      "mbbs",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: Bachelor of Medicine & Bachelor of Surgery (MBBS)\nSchool: School of Medical Sciences & Research (SMS&R)\nDegree Level: Undergraduate Medical (MBBS)\nDuration: 4.5 Years + 1 Year Compulsory Rotatory Internship\nAnnual Fee: Rs. 1,269,000 | Semester Fee: Rs. 634,500\nEligibility Criteria: Passed 10+2 with Physics, Chemistry, Biology/Biotechnology and English with min 50% marks (40% for SC/ST). Must qualify NEET-UG and register via UP DGME Counseling.\nSpecializations Offered: Clinical Medicine, General Surgery, Obstetrics & Gynaecology, Pediatrics, Orthopaedics, Community Medicine\nKey Subjects & Curriculum: Human Anatomy & Embryology, Medical Biochemistry, Physiology, Pharmacology, Pathology & Microbiology, Forensic Medicine, 1200+ Bed Hospital Clinical Postings\nCareer Pathways: Medical Officer, Clinical Specialist, Resident Surgeon, Healthcare Administrator, Medical Researcher\nTop Hiring Companies: Sharda Hospital, Max Healthcare, Fortis Hospitals, Apollo Hospitals, Medanta, AIIMS\nScholarships Applicable: No"
+  },
+  {
+    "id": "program_b-des",
+    "title": "Bachelor of Design (B.Des) - School of Design, Architecture & Planning (SAP)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "Bachelor of Design (B.Des)",
+      "Undergraduate (B.Des)",
+      "b-des",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: Bachelor of Design (B.Des)\nSchool: School of Design, Architecture & Planning (SAP)\nDegree Level: Undergraduate (B.Des)\nDuration: 4 Years (8 Semesters)\nAnnual Fee: Rs. 210,000 | Semester Fee: Rs. 105,000\nEligibility Criteria: Passed 10+2 in any stream with min 50% marks. Qualified in SUAT / UCEED / NID-DAT / NIFT followed by Portfolio Review and Design Interview.\nSpecializations Offered: User Experience & Interaction Design (UI/UX), Interior & Space Design, Fashion Design, Communication & Graphic Design\nKey Subjects & Curriculum: Design Thinking & Methodologies, UI/UX & Wireframing, Ergonomics & Human Factors, Digital Prototyping (Figma/Adobe XD), Material Exploration, Graduation Design Showcase\nCareer Pathways: UI/UX Designer, Product Designer, Interior Architect, Creative Director, Fashion Stylist, Brand Identity Designer\nTop Hiring Companies: TCS Interactive, Cognizant Studio, Infosys Design, Landor & Fitch, FabIndia, ZARA\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_ba-llb-hons",
+    "title": "B.A. LL.B. (Integrated Honours) - School of Law (SOL)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "B.A. LL.B. (Integrated Honours)",
+      "Undergraduate Law (Integrated 5-Year)",
+      "b-a-llb-hons",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: B.A. LL.B. (Integrated Honours)\nSchool: School of Law (SOL)\nDegree Level: Undergraduate Law (Integrated 5-Year)\nDuration: 5 Years (10 Semesters)\nAnnual Fee: Rs. 175,000 | Semester Fee: Rs. 87,500\nEligibility Criteria: Passed 10+2 with min 50% aggregate marks. Qualified in SUAT / CLAT / LSAT-India.\nSpecializations Offered: Constitutional Law, Corporate & Commercial Law, Criminal Law, Intellectual Property Rights (IPR), International Trade Law\nKey Subjects & Curriculum: Constitutional Law of India, Law of Crimes (IPC & CrPC), Law of Contracts & Torts, Moot Court Practice & Advocacy, Alternative Dispute Resolution (ADR), Supreme Court & High Court Internships\nCareer Pathways: Advocate / Litigator, Corporate Legal Counsel, Judicial Officer / Judge, Legal Consultant, Public Prosecutor, Civil Services\nTop Hiring Companies: Shardul Amarchand Mangaldas, Khaitan & Co, Trilegal, AZB & Partners, Luthra and Luthra, Corporate Legal Depts\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "program_b-pharm",
+    "title": "Bachelor of Pharmacy (B.Pharm) - School of Pharmacy (SOP)",
+    "category": "Academic Program & Fees",
+    "keywords": [
+      "Bachelor of Pharmacy (B.Pharm)",
+      "Undergraduate (B.Pharm)",
+      "b-pharm",
+      "fee",
+      "eligibility",
+      "curriculum",
+      "placements",
+      "recruiters"
+    ],
+    "content": "Program Name: Bachelor of Pharmacy (B.Pharm)\nSchool: School of Pharmacy (SOP)\nDegree Level: Undergraduate (B.Pharm)\nDuration: 4 Years (8 Semesters)\nAnnual Fee: Rs. 195,000 | Semester Fee: Rs. 97,500\nEligibility Criteria: Passed 10+2 examination with Physics, Chemistry and Biology/Mathematics with min 50% aggregate marks. SUAT / CUET qualified.\nSpecializations Offered: Pharmaceutics, Pharmacology, Pharmaceutical Analysis, Clinical Research & Regulatory Affairs\nKey Subjects & Curriculum: Human Anatomy & Physiology, Pharmaceutical Organic Chemistry, Physical Pharmaceutics, Pharmacology & Toxicology, Biopharmaceutics & Pharmacokinetics, Industrial Training\nCareer Pathways: Formulation Scientist, Drug Inspector, Clinical Research Associate, Quality Assurance Analyst, Regulatory Affairs Specialist\nTop Hiring Companies: Sun Pharma, Cipla, Dr. Reddy's Laboratories, Lupin, Torrent Pharmaceuticals, Mankind Pharma\nScholarships Applicable: Yes (Up to 100% based on merit/SUAT)"
+  },
+  {
+    "id": "admission_scholarships",
+    "title": "Sharda University Scholarship Schemes & Fee Waivers",
+    "category": "Scholarships & Financial Aid",
+    "keywords": [
+      "scholarship",
+      "fee waiver",
+      "merit scholarship",
+      "sports scholarship",
+      "defense concession"
+    ],
+    "content": "Sharda University offers multiple merit-based and category scholarships:\nUG Academic Merit Slabs:\n- 95.00% & above in 10+2: 100% Tuition Fee Waiver\n- 90.00% to 94.99% in 10+2: 50% Tuition Fee Waiver\n- 85.00% to 89.99% in 10+2: 40% Tuition Fee Waiver\n- 80.00% to 84.99% in 10+2: 20% Tuition Fee Waiver\n- 75.00% to 79.99% in 10+2: 10% Tuition Fee Waiver\nMBA Scholarships:\n- CAT/XAT 85+ or MAT 90+: 100% Waiver\n- CAT/XAT 75-84.99 or MAT 80-89.99: 50% Waiver\n- CAT/XAT 65-74.99: 25% Waiver\nOther Discounts: Sports quota (40% - 100%), Defense/Para-military wards (5%), Sibling discount (5%)."
+  },
+  {
+    "id": "hostel_accommodation",
+    "title": "Sharda University Hostel Accommodation and Mess Charges",
+    "category": "Hostels & Campus Living",
+    "keywords": [
+      "hostel fee",
+      "accommodation",
+      "room rent",
+      "mess food",
+      "campus stay",
+      "ac rooms"
+    ],
+    "content": "Hostel Accommodation Details at Sharda Campus:\n- AC 3-Seater Room: Rs. 1,61,000 / year (Security deposit Rs. 10,000 refundable)\n- AC 2-Seater Room: Rs. 1,92,000 / year (Security deposit Rs. 10,000 refundable)\n- Non-AC 3-Seater Room: Rs. 1,16,000 / year\n- Single Occupancy Studio AC: Rs. 2,35,000 / year\nAll hostels include 4 daily nutritious meals (Breakfast, Lunch, Evening Snacks, Dinner), 24x7 Wi-Fi, electricity backup, housekeeping, laundry facilities, gym access, and biometric gate security."
+  },
+  {
+    "id": "placements_summary",
+    "title": "Sharda University Placement Highlights & Statistics",
+    "category": "Placements & Career Outcomes",
+    "keywords": [
+      "placements",
+      "salary",
+      "highest package",
+      "average package",
+      "recruiters",
+      "amazon",
+      "microsoft"
+    ],
+    "content": "Placement Statistics & Career Support:\n- Highest Global Package: INR 1.00 Crore\n- Highest Domestic Package: INR 45.00 LPA\n- Average Package: INR 6.50 LPA to 8.80 LPA\n- Placement Percentage: 95%+\n- Companies Visiting: 600+ leading multinational corporations\n- Top Recruiters: Microsoft, Amazon Web Services, Deloitte, KPMG, PwC, Cognizant, Wipro, TCS, Accenture, Infosys, Sun Pharma, Larsen & Toubro."
+  },
+  {
+    "id": "faq_1",
+    "title": "FAQ: What is SUAT and is it mandatory for admission at Sharda University?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "What is SUAT and is it mandatory for admission at Sharda University?",
+      "Admissions & SUAT"
+    ],
+    "content": "Question: What is SUAT and is it mandatory for admission at Sharda University?\nCategory: Admissions & SUAT\nAnswer: SUAT (Sharda University Admission Test) is the single admission test for entrance into undergraduate and postgraduate programs at Sharda University. It is mandatory unless the candidate has qualified in national level entrance exams such as JEE Main (for B.Tech), NEET (for Medical/Dental), CAT/MAT/XAT (for MBA), CLAT (for Law), or NATA (for Architecture)."
+  },
+  {
+    "id": "faq_2",
+    "title": "FAQ: What scholarships are offered to meritorious students at Sharda University?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "What scholarships are offered to meritorious students at Sharda University?",
+      "Scholarships"
+    ],
+    "content": "Question: What scholarships are offered to meritorious students at Sharda University?\nCategory: Scholarships\nAnswer: Sharda University offers up to 100% tuition fee waivers based on academic merit in 10+2 / Graduation boards (95%+ gives 100% waiver, 90-94.99% gives 50% waiver, 85-89.99% gives 40% waiver). In addition, sports scholarships (up to 100%), defense personnel ward discounts (5%), and sibling discounts (5%) are provided."
+  },
+  {
+    "id": "faq_3",
+    "title": "FAQ: Can university and hostel fees be paid in installments?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "Can university and hostel fees be paid in installments?",
+      "Fee Structure & Payment"
+    ],
+    "content": "Question: Can university and hostel fees be paid in installments?\nCategory: Fee Structure & Payment\nAnswer: Yes, tuition fees and hostel fees can be paid semester-wise or annual basis through the online student ERP portal using Credit/Debit cards, Net Banking, UPI, or Demand Draft. Education loan assistance is also provided with leading banks like SBI, PNB, and HDFC."
+  },
+  {
+    "id": "faq_4",
+    "title": "FAQ: What hostel accommodation and campus facilities are available?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "What hostel accommodation and campus facilities are available?",
+      "Hostels & Campus Facilities"
+    ],
+    "content": "Question: What hostel accommodation and campus facilities are available?\nCategory: Hostels & Campus Facilities\nAnswer: Sharda University provides on-campus separate hostels for boys and girls with AC and Non-AC options (single, 2-seater, and 3-seater), 24/7 security with biometric access, high-speed Wi-Fi, laundry, 4-course nutritious dining mess, cafeteria food courts, gymnasiums, sports arenas, and a 1200-bed hospital on campus."
+  },
+  {
+    "id": "faq_5",
+    "title": "FAQ: What was the highest and average placement package at Sharda University?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "What was the highest and average placement package at Sharda University?",
+      "Placements"
+    ],
+    "content": "Question: What was the highest and average placement package at Sharda University?\nCategory: Placements\nAnswer: Sharda University recorded a highest international package of INR 1.00 Crore and a domestic package of INR 45.00 LPA. Over 600+ top recruiters including Microsoft, Amazon, Deloitte, KPMG, Wipro, Cognizant, and TCS actively recruit from the campus with a 95%+ overall placement record."
+  },
+  {
+    "id": "faq_6",
+    "title": "FAQ: Is Sharda University recognized by UGC and accredited by NAAC?",
+    "category": "Frequently Asked Questions",
+    "keywords": [
+      "Is Sharda University recognized by UGC and accredited by NAAC?",
+      "Accreditation"
+    ],
+    "content": "Question: Is Sharda University recognized by UGC and accredited by NAAC?\nCategory: Accreditation\nAnswer: Yes, Sharda University is established under UP Act No. 14 of 2009 and recognized by the University Grants Commission (UGC). It holds NAAC A+ Accreditation and is approved by respective regulatory bodies including AICTE, NMC, DCI, BCI, PCI, and COA."
+  }
+]

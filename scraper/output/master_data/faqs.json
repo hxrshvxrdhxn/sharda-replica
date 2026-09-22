@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Admissions & SUAT",
+    "question": "What is SUAT and is it mandatory for admission at Sharda University?",
+    "answer": "SUAT (Sharda University Admission Test) is the single admission test for entrance into undergraduate and postgraduate programs at Sharda University. It is mandatory unless the candidate has qualified in national level entrance exams such as JEE Main (for B.Tech), NEET (for Medical/Dental), CAT/MAT/XAT (for MBA), CLAT (for Law), or NATA (for Architecture)."
+  },
+  {
+    "id": 2,
+    "category": "Scholarships",
+    "question": "What scholarships are offered to meritorious students at Sharda University?",
+    "answer": "Sharda University offers up to 100% tuition fee waivers based on academic merit in 10+2 / Graduation boards (95%+ gives 100% waiver, 90-94.99% gives 50% waiver, 85-89.99% gives 40% waiver). In addition, sports scholarships (up to 100%), defense personnel ward discounts (5%), and sibling discounts (5%) are provided."
+  },
+  {
+    "id": 3,
+    "category": "Fee Structure & Payment",
+    "question": "Can university and hostel fees be paid in installments?",
+    "answer": "Yes, tuition fees and hostel fees can be paid semester-wise or annual basis through the online student ERP portal using Credit/Debit cards, Net Banking, UPI, or Demand Draft. Education loan assistance is also provided with leading banks like SBI, PNB, and HDFC."
+  },
+  {
+    "id": 4,
+    "category": "Hostels & Campus Facilities",
+    "question": "What hostel accommodation and campus facilities are available?",
+    "answer": "Sharda University provides on-campus separate hostels for boys and girls with AC and Non-AC options (single, 2-seater, and 3-seater), 24/7 security with biometric access, high-speed Wi-Fi, laundry, 4-course nutritious dining mess, cafeteria food courts, gymnasiums, sports arenas, and a 1200-bed hospital on campus."
+  },
+  {
+    "id": 5,
+    "category": "Placements",
+    "question": "What was the highest and average placement package at Sharda University?",
+    "answer": "Sharda University recorded a highest international package of INR 1.00 Crore and a domestic package of INR 45.00 LPA. Over 600+ top recruiters including Microsoft, Amazon, Deloitte, KPMG, Wipro, Cognizant, and TCS actively recruit from the campus with a 95%+ overall placement record."
+  },
+  {
+    "id": 6,
+    "category": "Accreditation",
+    "question": "Is Sharda University recognized by UGC and accredited by NAAC?",
+    "answer": "Yes, Sharda University is established under UP Act No. 14 of 2009 and recognized by the University Grants Commission (UGC). It holds NAAC A+ Accreditation and is approved by respective regulatory bodies including AICTE, NMC, DCI, BCI, PCI, and COA."
+  }
+]
