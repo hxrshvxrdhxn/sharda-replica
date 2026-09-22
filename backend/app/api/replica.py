@@ -1233,7 +1233,7 @@ def process_html(html: str, current_slug: str = "") -> str:
                     is_last = (i == len(parts) - 1)
                     crumbs.append('<span class="divider"><i class="icon-arrow-right icons"></i></span>')
                     if is_last:
-                        page_title = soup.title.string if soup.title else name
+                        page_title = (soup.title.string if soup.title and soup.title.string else name) or name
                         if " - " in page_title:
                             page_title = page_title.split(" - ")[0].strip()
                         if len(page_title) > 40:
