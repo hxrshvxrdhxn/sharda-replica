@@ -467,8 +467,20 @@ class TurboBytesShardaBrainService:
                 "🔗 [Check Medical Admission Guidelines](/admissions)"
             )
 
-        # Law
-        if "law" in q or "llb" in q or "ll.b" in q or "ba llb" in q:
+        # LLM after 12th specific check
+        if ("llm" in q or "ll.m" in q) and ("12" in q or "after 12" in q or "10+2" in q or "school" in q):
+            return (
+                "* **No, you cannot pursue LL.M directly after 12th.** LL.M (Master of Laws) is a postgraduate degree requiring a completed Bachelor of Laws (**LL.B.**) degree with minimum 50% marks.\n"
+                "* **Law Options After 12th**: You can enroll in Sharda's 5-year integrated programs: **B.A. LL.B. (Hons)** or **B.B.A. LL.B. (Hons)** at the School of Law.\n"
+                "* **Eligibility**: **10+2 with minimum 50% aggregate marks** + valid score in **CLAT / LSAT / SUAT 2026**.\n"
+                "* **Annual Fee**: **₹1,95,000 / yr** with up to **100% merit scholarship** tuition waivers available.\n\n"
+                "🔗 [Explore Integrated Law Programmes (BA LLB / BBA LLB)](/programmes)\n"
+                "🔗 [Apply Online for 2026 Admissions](/admissions)\n"
+                "🔗 [Book SUAT 2026 Test Slot](/suat)"
+            )
+
+        # General Law
+        if "law" in q or "llb" in q or "ll.b" in q or "llm" in q or "ll.m" in q or "ba llb" in q or "bba llb" in q:
             return (
                 "**Sharda School of Law is BCI-approved with moot courts and legal aid clinics.**\n\n"
                 "- **B.A. LL.B. / B.B.A. LL.B. (Integrated)**: 5 Years | ₹1,95,000 / yr | 10+2 ≥ 50% + CLAT/LSAT/SUAT\n"
