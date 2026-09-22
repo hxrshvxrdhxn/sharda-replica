@@ -39,9 +39,9 @@ def test_tier0_homepage_exact_dom():
             print(f"[PASS] Core DOM Section Verified: {sec}")
 
         # Check injected Gemini Sharda AI Floating Bar
-        sai_bar = page.query_selector("#saiBar")
+        sai_bar = page.query_selector("#turboFloatBar") or page.query_selector("#saiBar") or page.query_selector(".turbo-ai-floating-bar") or page.query_selector(".sharda-ai-floating-bar")
         assert sai_bar is not None, "Sharda AI floating bar is missing"
-        print("[PASS] Embedded Gemini Sharda AI Floating Bar Verified (#saiBar)")
+        print("[PASS] Embedded Gemini Sharda AI Floating Bar Verified")
 
         browser.close()
 
@@ -76,7 +76,7 @@ def test_tier1_to_tier4_deep_routes():
             assert resp.status == 200, f"Route {route['name']} failed with status {resp.status}"
             
             # Check injected AI bar presence
-            ai_present = page.query_selector("#saiFloatingBar") or page.query_selector("#saiBar")
+            ai_present = page.query_selector("#turboFloatBar") or page.query_selector("#saiFloatingBar") or page.query_selector("#saiBar") or page.query_selector(".turbo-ai-floating-bar")
             assert ai_present is not None
             print(f"[PASS] {route['name']} ({route['path']}) -> 200 OK + AI Injected")
 
@@ -89,20 +89,25 @@ def test_interactive_sharda_ai_and_lead_flows():
         page = context.new_page()
 
         print("\n--- 3. TESTING INTERACTIVE SHARDA AI (GEMINI RAG) CHAT FLOW ---")
-        page.goto("http://127.0.0.1:8000/replica", wait_until="domcontentloaded", timeout=15000)
+        page.goto("http://127.0.0.1:8000/replica/about/overview", wait_until="domcontentloaded", timeout=15000)
 
         # Trigger AI Modal
-        page.fill("#saiBarInput", "What is the fee for B.Tech Computer Science and MBA?")
-        page.click("button.sharda-ai-btn")
+        inp_sel = "#turboFloatInput" if page.query_selector("#turboFloatInput") else "#saiBarInput"
+        btn_sel = "#turboFloatSearchBtn" if page.query_selector("#turboFloatSearchBtn") else "button.sharda-ai-btn"
+        modal_sel = "#turboModal" if page.query_selector("#turboModal") else "#saiModal"
+        body_sel = "#turboChatBody" if page.query_selector("#turboChatBody") else "#saiChatBody"
+
+        page.fill(inp_sel, "What is the fee for B.Tech Computer Science and MBA?")
+        page.click(btn_sel)
         page.wait_for_timeout(1000)
 
-        modal = page.query_selector("#saiModal")
+        modal = page.query_selector(modal_sel)
         assert modal is not None
         print("[PASS] Sharda AI Modal Opened Successfully.")
 
         # Wait for AI grounded response
-        page.wait_for_timeout(3000)
-        chat_text = page.inner_text("#saiChatBody")
+        page.wait_for_timeout(3500)
+        chat_text = page.inner_text(body_sel)
         assert len(chat_text) > 50
         print(f"[PASS] AI Response Received: {chat_text[:100]}...")
 

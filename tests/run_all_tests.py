@@ -1,6 +1,10 @@
+import os
 import subprocess
 import sys
 from pathlib import Path
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,7 +13,8 @@ def run_suite(name: str, script_path: str):
     print(f"RUNNING TEST SUITE: {name}")
     print("=" * 80)
     cmd = [str(BASE_DIR / "venv" / "Scripts" / "python.exe"), script_path]
-    res = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="ignore")
+    env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+    res = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     print(res.stdout)
     if res.stderr and "Error" in res.stderr:
         print("STDERR:", res.stderr)
@@ -20,7 +25,8 @@ def run_pytest_suite(name: str, test_file: str):
     print(f"RUNNING PYTEST SUITE: {name}")
     print("=" * 80)
     cmd = [str(BASE_DIR / "venv" / "Scripts" / "pytest.exe"), test_file, "-v", "-s"]
-    res = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="ignore")
+    env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+    res = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace", env=env)
     print(res.stdout)
     if res.stderr and "Error" in res.stderr:
         print("STDERR:", res.stderr)
@@ -36,18 +42,17 @@ def main():
         ("2. Exact Replica & Backend Gemini RAG E2E Suite", "tests/test_replica_e2e.py"),
         ("3. All Footer Links In-App Routing Audit (69 Links)", "tests/test_all_footer_links.py"),
         ("4. All Header Navigation In-App Routing Audit (212 Links)", "tests/test_all_header_links.py"),
-        ("5. Multi-Tier Deep Routes & Interactive Flows", "tests/test_exhaustive_suite.py")
+        ("5. Multi-Tier Deep Routes & Interactive Flows", "tests/test_exhaustive_suite.py"),
+        ("6. Backend FastAPI & CRM Security Suite", "tests/test_backend_api.py"),
+        ("7. SAI Conversational Counselor Flow Suite", "tests/test_sai_page_flow.py"),
+        ("8. AI Chat Endpoints & Latency Suite", "tests/test_ai_endpoints.py")
     ]
 
     results = []
 
     for name, path in suites:
-        ok = run_pytest_suite(name, path) if "pytest" in name or "exhaustive" in path else run_suite(name, path)
+        ok = run_pytest_suite(name, path) if ("pytest" in name or "exhaustive" in path or "test_backend_api" in path) else run_suite(name, path)
         results.append((name, ok))
-
-    # Backend API tests
-    backend_ok = run_pytest_suite("6. Backend FastAPI & CRM Security Suite", "tests/test_backend_api.py")
-    results.append(("6. Backend FastAPI & CRM Security Suite", backend_ok))
 
     print("\n" + "=" * 80)
     print("                     E2E QUALITY AUDIT SCORECARD")

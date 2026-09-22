@@ -38,7 +38,7 @@ def test_full_homepage_and_navigation_e2e():
             print(f"[PASS] Section verified: {sec}")
 
         # 3. Test Embedded Sharda AI Bar
-        sai_bar = page.query_selector("#saiBar")
+        sai_bar = page.query_selector("#turboFloatBar") or page.query_selector("#saiBar") or page.query_selector(".turbo-ai-floating-bar") or page.query_selector(".sharda-ai-floating-bar")
         assert sai_bar is not None
         print("[PASS] Embedded Sharda AI floating bar verified.")
 

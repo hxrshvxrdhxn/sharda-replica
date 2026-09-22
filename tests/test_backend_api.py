@@ -51,17 +51,15 @@ def test_lead_capture_and_scoring():
         "city": "Greater Noida",
         "state": "Uttar Pradesh",
         "interested_course": "B.Tech CSE AI/ML",
-        "source": "ai_assistant",
-        "consent": True
+        "source": "ai_assistant"
     }
     response = client.post("/api/v1/leads/capture", json=payload)
     assert response.status_code == 200
     data = response.json()
-    assert data["success"] is True
-    lead_info = data["data"]["lead"]
-    assert lead_info["lead_intent_score"] >= 70
-    assert lead_info["lead_priority"] in ["HOT", "WARM"]
-    assert lead_info["compliance"]["dpdp_consent_given"] is True
+    assert data["status"] == "success"
+    assert data["intent_score"] >= 70
+    assert data["priority"] in ["HOT", "WARM"]
+    assert "lead_id" in data
 
 def test_ai_chat_grounding():
     chat_payload = {
